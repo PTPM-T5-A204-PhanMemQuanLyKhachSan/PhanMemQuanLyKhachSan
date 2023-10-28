@@ -5,3 +5,10 @@ C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.csproj.Asse
 C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.csproj.CoreCompileInputs.cache
 C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.dll
 C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.pdb
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\BLL_DAL\bin\Debug\BLL_DAL.dll.config
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\BLL_DAL\bin\Debug\BLL_DAL.dll
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\BLL_DAL\bin\Debug\BLL_DAL.pdb
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.dll
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.pdb
