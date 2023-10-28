@@ -1,0 +1,64 @@
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\DoAnQLKhachSan.exe.config
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\DoAnQLKhachSan.exe
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\DoAnQLKhachSan.pdb
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\API.pdb
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\API.dll.config
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.Form1.resources
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.Properties.Resources.resources
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.csproj.GenerateResource.cache
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.csproj.CoreCompileInputs.cache
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.csproj.CopyComplete
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.exe
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.pdb
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Text.Json.dll
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Memory.dll
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.ValueTuple.dll
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Text.Encodings.Web.dll
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Numerics.Vectors.dll
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Buffers.dll
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Memory.xml
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Numerics.Vectors.xml
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Buffers.xml
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.csprojAssemblyReference.cache
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\API.dll
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Text.Encodings.Web.xml
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Text.Json.xml
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Dowload\Học Tập\Phát Triển Ứng Dụng Thông Minh\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.ValueTuple.xml
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\DoAnQLKhachSan.exe.config
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\DoAnQLKhachSan.exe
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\DoAnQLKhachSan.pdb
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\API.dll
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Buffers.dll
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Memory.dll
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Text.Json.dll
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.ValueTuple.dll
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\API.pdb
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\API.dll.config
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Buffers.xml
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Memory.xml
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Text.Json.xml
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\bin\Debug\System.ValueTuple.xml
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.csproj.AssemblyReference.cache
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.Form1.resources
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.Properties.Resources.resources
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.csproj.GenerateResource.cache
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.csproj.CoreCompileInputs.cache
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.csproj.CopyComplete
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.exe
+C:\Users\DNT\Downloads\DoAn\DoAnQLKhachSan\DoAnQLKhachSan\obj\Debug\DoAnQLKhachSan.pdb
