@@ -12,3 +12,10 @@ C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\BLL_DAL\obj
 C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.dll
 C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.pdb
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\bin\Debug\BLL_DAL.dll.config
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\bin\Debug\BLL_DAL.dll
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\bin\Debug\BLL_DAL.pdb
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.csproj.AssemblyReference.cache
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.csproj.CoreCompileInputs.cache
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.dll
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.pdb
