@@ -127,7 +127,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Orange;
+            this.label2.ForeColor = System.Drawing.Color.LimeGreen;
             this.label2.Location = new System.Drawing.Point(253, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(189, 24);
