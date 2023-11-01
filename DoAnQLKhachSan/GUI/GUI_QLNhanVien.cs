@@ -79,7 +79,7 @@ namespace GUI
 
         private void dGVNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 isSua = false;
                 isThem = false;
@@ -90,7 +90,7 @@ namespace GUI
                 btnEnable(false);
                 txtReadOnly(true);
 
-                
+
                 txtHoTen.Text = dGVNhanVien.Rows[e.RowIndex].Cells["HoTenNV"].Value.ToString();
                 txtLuong.Text = dGVNhanVien.Rows[e.RowIndex].Cells["Luong"].Value.ToString();
                 cboGioiTinh.Text = dGVNhanVien.Rows[e.RowIndex].Cells["Phai"].Value.ToString();
@@ -101,7 +101,7 @@ namespace GUI
                 txtCCCD.Text = dGVNhanVien.Rows[e.RowIndex].Cells["CCCD"].Value.ToString();
                 dTPNgaySinh.Value = (DateTime)dGVNhanVien.Rows[e.RowIndex].Cells["NgaySinh"].Value;
                 dTPNgayVaoLam.Value = (DateTime)dGVNhanVien.Rows[e.RowIndex].Cells["NgayVaoLam"].Value;
-                pictureBox1.Image = Image.FromFile("..//..//Resources//"+dGVNhanVien.Rows[e.RowIndex].Cells["Hinh"].Value.ToString());
+                pictureBox1.Image = Image.FromFile("..//..//Resources//" + dGVNhanVien.Rows[e.RowIndex].Cells["Hinh"].Value.ToString());
             }
         }
 
@@ -169,12 +169,12 @@ namespace GUI
                 btnEnable(false);
                 txtReadOnly(true);
             }
-            
+
         }
 
         private void txtDienThoai_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -182,10 +182,11 @@ namespace GUI
 
         private void txtDienThoai_TextChanged(object sender, EventArgs e)
         {
-            if (txtDienThoai.Text.Length > 10)
+            int maxlenght = 10;
+            if (txtDienThoai.Text.Length > maxlenght)
             {
-                txtDienThoai.Text = txtDienThoai.Text.Substring(0, 10);
-                txtDienThoai.SelectionStart = 10;
+                txtDienThoai.Text = txtDienThoai.Text.Substring(0, maxlenght);
+                txtDienThoai.SelectionStart = maxlenght;
             }
         }
 
@@ -214,7 +215,7 @@ namespace GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Bạn có chắc muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có chắc muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 if (nhanviens.xoaNhanVien(Int32.Parse(dGVNhanVien.CurrentRow.Cells["MaNV"].Value.ToString())))
                 {
@@ -224,7 +225,7 @@ namespace GUI
                 else
                     MessageBox.Show("Có lỗi xảy ra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
@@ -250,6 +251,16 @@ namespace GUI
             catch
             {
                 MessageBox.Show("Lỗi tải file!", "Thông báo");
+            }
+        }
+
+        private void txtCCCD_TextChanged(object sender, EventArgs e)
+        {
+            int maxlenght = 12;
+            if (txtCCCD.Text.Length > maxlenght)
+            {
+                txtCCCD.Text = txtCCCD.Text.Substring(0, maxlenght);
+                txtCCCD.SelectionStart = maxlenght;
             }
         }
     }

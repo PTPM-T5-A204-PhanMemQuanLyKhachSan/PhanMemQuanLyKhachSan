@@ -107,3 +107,4 @@ D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\GUI\obj\Debug\GUI.csproj.CopyComplet
 D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\GUI\obj\Debug\GUI.exe
 D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\GUI\obj\Debug\GUI.pdb
 C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\obj\Debug\GUI.GUI_QLNhanVien.resources
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\GUI\obj\Debug\GUI.GUI_QLNhanVien.resources
