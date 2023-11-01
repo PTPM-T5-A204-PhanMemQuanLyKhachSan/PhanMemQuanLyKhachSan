@@ -71,6 +71,12 @@
     <Compile Include="GUI_Main.Designer.cs">
       <DependentUpon>GUI_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_QLNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_QLNhanVien.Designer.cs">
+      <DependentUpon>GUI_QLNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI_CauHinh.resx">
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_Main.resx">
       <DependentUpon>GUI_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_QLNhanVien.resx">
+      <DependentUpon>GUI_QLNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -111,6 +120,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LogoHotel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\them.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\luu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timkiem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\nv1.jpg" />
+    <Content Include="Resources\nv2.png" />
+    <Content Include="Resources\nv3.jpg" />
+    <Content Include="Resources\nv4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

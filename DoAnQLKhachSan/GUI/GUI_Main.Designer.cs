@@ -32,16 +32,16 @@
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
-            this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
-            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
+            this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -88,19 +88,29 @@
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "HỆ THỐNG";
             // 
-            // fluentDesignFormControl1
+            // accordionControlElement2
             // 
-            this.fluentDesignFormControl1.FluentDesignForm = this;
-            this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
-            this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
-            this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1498, 39);
-            this.fluentDesignFormControl1.TabIndex = 2;
-            this.fluentDesignFormControl1.TabStop = false;
+            this.accordionControlElement2.Appearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement2.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement2.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement2.Appearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.accordionControlElement2.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement2.Appearance.Normal.Options.UseForeColor = true;
+            this.accordionControlElement2.Name = "accordionControlElement2";
+            this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement2.Text = "Danh mục người sử dụng";
             // 
-            // fluentFormDefaultManager1
+            // accordionControlElement3
             // 
-            this.fluentFormDefaultManager1.Form = this;
+            this.accordionControlElement3.Appearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement3.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement3.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement3.Appearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.accordionControlElement3.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement3.Appearance.Normal.Options.UseForeColor = true;
+            this.accordionControlElement3.Name = "accordionControlElement3";
+            this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement3.Text = "Trợ giúp";
             // 
             // accordionControlElement4
             // 
@@ -129,6 +139,30 @@
             this.accordionControlElement4.Name = "accordionControlElement4";
             this.accordionControlElement4.Text = "KHÁCH SẠN";
             // 
+            // accordionControlElement8
+            // 
+            this.accordionControlElement8.Appearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement8.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement8.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement8.Appearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.accordionControlElement8.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement8.Appearance.Normal.Options.UseForeColor = true;
+            this.accordionControlElement8.Name = "accordionControlElement8";
+            this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement8.Text = "Danh sách phòng";
+            // 
+            // accordionControlElement9
+            // 
+            this.accordionControlElement9.Appearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement9.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement9.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement9.Appearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.accordionControlElement9.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement9.Appearance.Normal.Options.UseForeColor = true;
+            this.accordionControlElement9.Name = "accordionControlElement9";
+            this.accordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement9.Text = "Quản lý dịch vụ";
+            // 
             // accordionControlElement5
             // 
             this.accordionControlElement5.Appearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -140,30 +174,6 @@
             this.accordionControlElement5.Name = "accordionControlElement5";
             this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement5.Text = "Quản lý nhân viên";
-            // 
-            // accordionControlElement2
-            // 
-            this.accordionControlElement2.Appearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accordionControlElement2.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement2.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accordionControlElement2.Appearance.Normal.ForeColor = System.Drawing.Color.White;
-            this.accordionControlElement2.Appearance.Normal.Options.UseFont = true;
-            this.accordionControlElement2.Appearance.Normal.Options.UseForeColor = true;
-            this.accordionControlElement2.Name = "accordionControlElement2";
-            this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement2.Text = "Danh mục người sử dụng";
-            // 
-            // accordionControlElement3
-            // 
-            this.accordionControlElement3.Appearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accordionControlElement3.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement3.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accordionControlElement3.Appearance.Normal.ForeColor = System.Drawing.Color.White;
-            this.accordionControlElement3.Appearance.Normal.Options.UseFont = true;
-            this.accordionControlElement3.Appearance.Normal.Options.UseForeColor = true;
-            this.accordionControlElement3.Name = "accordionControlElement3";
-            this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement3.Text = "Trợ giúp";
             // 
             // accordionControlElement6
             // 
@@ -189,29 +199,19 @@
             this.accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement7.Text = "Báo cáo thống kê";
             // 
-            // accordionControlElement8
+            // fluentDesignFormControl1
             // 
-            this.accordionControlElement8.Appearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accordionControlElement8.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement8.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accordionControlElement8.Appearance.Normal.ForeColor = System.Drawing.Color.White;
-            this.accordionControlElement8.Appearance.Normal.Options.UseFont = true;
-            this.accordionControlElement8.Appearance.Normal.Options.UseForeColor = true;
-            this.accordionControlElement8.Name = "accordionControlElement8";
-            this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement8.Text = "Danh sách phòng";
+            this.fluentDesignFormControl1.FluentDesignForm = this;
+            this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
+            this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
+            this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1498, 39);
+            this.fluentDesignFormControl1.TabIndex = 2;
+            this.fluentDesignFormControl1.TabStop = false;
             // 
-            // accordionControlElement9
+            // fluentFormDefaultManager1
             // 
-            this.accordionControlElement9.Appearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accordionControlElement9.Appearance.Hovered.Options.UseFont = true;
-            this.accordionControlElement9.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accordionControlElement9.Appearance.Normal.ForeColor = System.Drawing.Color.White;
-            this.accordionControlElement9.Appearance.Normal.Options.UseFont = true;
-            this.accordionControlElement9.Appearance.Normal.Options.UseForeColor = true;
-            this.accordionControlElement9.Name = "accordionControlElement9";
-            this.accordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement9.Text = "Quản lý dịch vụ";
+            this.fluentFormDefaultManager1.Form = this;
             // 
             // GUI_Main
             // 

@@ -1,11 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLKhachSan" Class="QLKhachSanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-GIGABYTE;Initial Catalog=QLKhachSan;User ID=sa" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLKhachSanConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-AILSKO80;Initial Catalog=QLKhachSan;User ID=sa" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLKhachSanConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.QL_NguoiDung" Member="QL_NguoiDungs">
     <Type Name="QL_NguoiDung">
       <Column Name="TenDangNhap" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MatKhau" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="HoatDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="NhanVien_QL_NguoiDung" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien">
+      <Column Name="MaNV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTenNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChucVu" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Luong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Phai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="QueQuan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CCCD" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="Hinh" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DienThoai" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="TinhTrang" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NgayVaoLam" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="NhanVien_QL_NguoiDung" Member="QL_NguoiDungs" ThisKey="MaNV" OtherKey="MaNV" Type="QL_NguoiDung" />
     </Type>
   </Table>
 </Database>

@@ -8,5 +8,18 @@
         <elementListCompartment Id="4d29f6c1-bb28-4f04-977a-98cbe93e4887" absoluteBounds="4.39, 2.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="212f7cfa-2ebe-4194-97a9-32880fdb0f79" absoluteBounds="1.625, 1.125, 2, 3.1170068359375">
+      <DataClassMoniker Name="/QLKhachSanDataContext/NhanVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93250197-3d21-40ad-9074-14391505bc03" absoluteBounds="1.6400000000000001, 1.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.625 : 3.16429768880208); (4.375 : 3.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLKhachSanDataContext/NhanVien/NhanVien_QL_NguoiDung" />
+      <nodes>
+        <classShapeMoniker Id="212f7cfa-2ebe-4194-97a9-32880fdb0f79" />
+        <classShapeMoniker Id="25bdbc36-3894-470b-95de-c2cf24ed4fdd" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

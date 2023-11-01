@@ -15,6 +15,8 @@ namespace GUI
         public GUI_Main()
         {
             InitializeComponent();
+            GUI_QLNhanVien gui = new GUI_QLNhanVien();
+            fluentDesignFormContainer1.Controls.Add(gui);
         }
 
         private void GUI_Main_FormClosed(object sender, FormClosedEventArgs e)
