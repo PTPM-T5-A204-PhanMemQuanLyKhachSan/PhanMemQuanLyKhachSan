@@ -33,6 +33,36 @@
       <Column Name="LoaiPhong" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="GiaPhong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TrangThai" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Association Name="Phong_ChiTietDatPhong" Member="ChiTietDatPhongs" ThisKey="MaPhong" OtherKey="MaPhong" Type="ChiTietDatPhong" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhachHang" Member="KhachHangs">
+    <Type Name="KhachHang">
+      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTenKH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CCCD" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="KhachHang_DatPhong" Member="DatPhongs" ThisKey="MaKH" OtherKey="MaKH" Type="DatPhong" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChiTietDatPhong" Member="ChiTietDatPhongs">
+    <Type Name="ChiTietDatPhong">
+      <Column Name="MaDP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaPhong" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Phong_ChiTietDatPhong" Member="Phong" ThisKey="MaPhong" OtherKey="MaPhong" Type="Phong" IsForeignKey="true" />
+      <Association Name="DatPhong_ChiTietDatPhong" Member="DatPhong" ThisKey="MaDP" OtherKey="MaDP" Type="DatPhong" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DatPhong" Member="DatPhongs">
+    <Type Name="DatPhong">
+      <Column Name="MaDP" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckIn" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CheckOut" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Association Name="DatPhong_ChiTietDatPhong" Member="ChiTietDatPhongs" ThisKey="MaDP" OtherKey="MaDP" Type="ChiTietDatPhong" />
+      <Association Name="KhachHang_DatPhong" Member="KhachHang" ThisKey="MaKH" OtherKey="MaKH" Type="KhachHang" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

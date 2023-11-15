@@ -7,37 +7,37 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class GUI_QLPhong : DevExpress.XtraEditors.XtraUserControl
+    public partial class GUI_QLKhachHang : DevExpress.XtraEditors.XtraUserControl
     {
-        BLL_DAL_Phong phongs = new BLL_DAL_Phong();
+        BLL_DAL_KhachHang khachHangs = new BLL_DAL_KhachHang();
         bool isSua = false;
         bool isThem = false;
-        public GUI_QLPhong()
+        public GUI_QLKhachHang()
         {
             InitializeComponent();
         }
 
-        private void GUI_QLPhong_Load(object sender, EventArgs e)
+        private void GUI_QLKhachHang_Load(object sender, EventArgs e)
         {
-            loadDGVPhong();
+            loadDGVKhachHang();
             txtEnable(false);
             btnXoa.Enabled = btnSua.Enabled = btnLuu.Enabled = false;
         }
 
-        public void loadDGVPhong()
-        {
-            dataGridView1.DataSource = phongs.LoadPhong("");
-        }
-
         public void txtEnable(bool e)
         {
-            txtTenPhong.ReadOnly = txtGiaPhong.ReadOnly = !e;
-            cboLoaiPhong.Enabled = cboTrangThai.Enabled = e;
+            txtHoTenKH.ReadOnly = txtCCCD.ReadOnly = txtEmail.ReadOnly = txtSDT.ReadOnly = !e;
+        }
+
+        public void loadDGVKhachHang()
+        {
+            dataGridView1.DataSource = khachHangs.LoadKhachHang("");
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -51,10 +51,9 @@ namespace GUI
             refesh();
         }
 
-        public void refesh()
+        private void refesh()
         {
-            txtTenPhong.Text = txtGiaPhong.Text = "";
-            cboLoaiPhong.SelectedIndex = cboTrangThai.SelectedIndex = 0;
+            txtHoTenKH.Text = txtCCCD.Text = txtEmail.Text = txtSDT.Text = "";
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -69,10 +68,10 @@ namespace GUI
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = phongs.LoadPhong(txtTimKiem.Text);
+            dataGridView1.DataSource = khachHangs.LoadKhachHang(txtTimKiem.Text);
         }
 
-        private void txtGiaPhong_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtCCCD_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
@@ -84,35 +83,40 @@ namespace GUI
         {
             if (MessageBox.Show("Bạn có chắc muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                if (phongs.xoaPhong(Int32.Parse(dataGridView1.CurrentRow.Cells["MaPhong"].Value.ToString())))
+                if (khachHangs.xoaKhachHang(Int32.Parse(dataGridView1.CurrentRow.Cells["MaKH"].Value.ToString())))
                 {
-                    loadDGVPhong();
+                    loadDGVKhachHang();
                     refesh();
                     MessageBox.Show("Đã xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Không xóa được phòng vì phòng đã từng được đặt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không xóa được khách hàng vì khách hàng đã từng đặt phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (txtTenPhong.Text == string.Empty || txtGiaPhong.Text == string.Empty)
+            if (txtHoTenKH.Text == string.Empty || txtCCCD.Text == string.Empty || txtEmail.Text == string.Empty || txtSDT.Text == string.Empty)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (!IsEmail(txtEmail.Text))
+            {
+                MessageBox.Show("Email không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (isThem)
             {
-                Phong phong = new Phong();
-                phong.TenPhong = txtTenPhong.Text;
-                phong.GiaPhong = int.Parse(txtGiaPhong.Text);
-                phong.LoaiPhong = cboLoaiPhong.Text;
-                phong.TrangThai = cboTrangThai.Text;
+                KhachHang kh = new KhachHang();
+                kh.HoTenKH = txtHoTenKH.Text;
+                kh.CCCD = txtCCCD.Text;
+                kh.Email = txtEmail.Text;
+                kh.Phone = txtSDT.Text;
 
-                if (phongs.themPhong(phong))
+                if (khachHangs.themKhachHang(kh))
                 {
-                    loadDGVPhong();
+                    loadDGVKhachHang();
                     MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -126,16 +130,16 @@ namespace GUI
             }
             if (isSua)
             {
-                Phong phong = new Phong();
-                phong.MaPhong = (int)dataGridView1.CurrentRow.Cells["MaPhong"].Value;
-                phong.TenPhong = txtTenPhong.Text;
-                phong.GiaPhong = int.Parse(txtGiaPhong.Text);
-                phong.LoaiPhong = cboLoaiPhong.Text;
-                phong.TrangThai = cboTrangThai.Text;
+                KhachHang kh = new KhachHang();
+                kh.MaKH = (int)dataGridView1.CurrentRow.Cells["MaKH"].Value;
+                kh.HoTenKH = txtHoTenKH.Text;
+                kh.CCCD = txtCCCD.Text;
+                kh.Email = txtEmail.Text;
+                kh.Phone = txtSDT.Text;
 
-                if (phongs.suaPhong(phong))
+                if (khachHangs.suaKhachHang(kh))
                 {
-                    loadDGVPhong();
+                    loadDGVKhachHang();
                     MessageBox.Show("Sửa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -161,11 +165,36 @@ namespace GUI
                 btnLuu.Enabled = false;
                 txtEnable(false);
 
-                txtTenPhong.Text = dataGridView1.CurrentRow.Cells["TenPhong"].Value.ToString();
-                txtGiaPhong.Text = dataGridView1.CurrentRow.Cells["GiaPhong"].Value.ToString();
-                cboLoaiPhong.SelectedIndex = cboLoaiPhong.FindStringExact(dataGridView1.CurrentRow.Cells["LoaiPhong"].Value.ToString());
-                cboTrangThai.SelectedIndex = cboTrangThai.FindStringExact(dataGridView1.CurrentRow.Cells["TrangThai"].Value.ToString());
+                txtHoTenKH.Text = dataGridView1.CurrentRow.Cells["HoTenKH"].Value.ToString();
+                txtCCCD.Text = dataGridView1.CurrentRow.Cells["CCCD"].Value.ToString();
+                txtEmail.Text = dataGridView1.CurrentRow.Cells["Email"].Value.ToString();
+                txtSDT.Text = dataGridView1.CurrentRow.Cells["Phone"].Value.ToString();
             }
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+            int maxlenght = 10;
+            if (txtSDT.Text.Length > maxlenght)
+            {
+                txtSDT.Text = txtSDT.Text.Substring(0, maxlenght);
+                txtSDT.SelectionStart = maxlenght;
+            }
+        }
+
+        private void txtCCCD_TextChanged(object sender, EventArgs e)
+        {
+            int maxlenght = 12;
+            if (txtCCCD.Text.Length > maxlenght)
+            {
+                txtCCCD.Text = txtCCCD.Text.Substring(0, maxlenght);
+                txtCCCD.SelectionStart = maxlenght;
+            }
+        }
+
+        public bool IsEmail(string email)
+        {
+            return Regex.IsMatch(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
         }
     }
 }

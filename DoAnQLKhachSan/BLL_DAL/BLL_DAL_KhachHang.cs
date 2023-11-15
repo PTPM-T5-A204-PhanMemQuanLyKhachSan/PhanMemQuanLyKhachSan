@@ -6,31 +6,31 @@ using System.Threading.Tasks;
 
 namespace BLL_DAL
 {
-    public class BLL_DAL_Phong
+    public class BLL_DAL_KhachHang
     {
         QLKhachSanDataContext db = new QLKhachSanDataContext();
-        public BLL_DAL_Phong()
+        public BLL_DAL_KhachHang()
         {
 
         }
 
-        public List<Phong> LoadPhong(string key)
+        public List<KhachHang> LoadKhachHang(string key)
         {
             if (string.IsNullOrEmpty(key))
             {
-                return db.Phongs.ToList();
+                return db.KhachHangs.ToList();
             }
             else
             {
-                return db.Phongs.Where(x => x.TenPhong.Contains(key) || x.LoaiPhong.Contains(key) || x.GiaPhong.ToString().Contains(key) || x.TrangThai.Contains(key)).ToList();
+                return db.KhachHangs.Where(x => x.HoTenKH.Contains(key) || x.CCCD.Contains(key) || x.Email.Contains(key) || x.Phone.Contains(key)).ToList();
             }
         }
 
-        public bool themPhong(Phong p)
+        public bool themKhachHang(KhachHang kh)
         {
             try
             {
-                db.Phongs.InsertOnSubmit(p);
+                db.KhachHangs.InsertOnSubmit(kh);
                 db.SubmitChanges();
                 return true;
             }
@@ -40,21 +40,21 @@ namespace BLL_DAL
             }
         }
 
-        public bool xoaPhong(int ma)
+        public bool xoaKhachHang(int ma)
         {
             try
             {
-                Phong p = db.Phongs.FirstOrDefault(x => x.MaPhong == ma);
-                if (p == null)
+                KhachHang kh = db.KhachHangs.FirstOrDefault(x => x.MaKH == ma);
+                if (kh == null)
                 {
                     return false;
                 }
-                ChiTietDatPhong ctdp = db.ChiTietDatPhongs.FirstOrDefault(x => x.MaPhong == ma);
-                if (ctdp != null)
+                DatPhong dp = db.DatPhongs.FirstOrDefault(x => x.MaKH == ma);
+                if (dp != null)
                 {
                     return false;
                 }
-                db.Phongs.DeleteOnSubmit(p);
+                db.KhachHangs.DeleteOnSubmit(kh);
                 db.SubmitChanges();
                 return true;
             }
@@ -64,19 +64,19 @@ namespace BLL_DAL
             }
         }
 
-        public bool suaPhong(Phong t)
+        public bool suaKhachHang(KhachHang t)
         {
             try
             {
-                Phong p = db.Phongs.FirstOrDefault(x => x.MaPhong == t.MaPhong);
-                if (p == null)
+                KhachHang kh = db.KhachHangs.FirstOrDefault(x => x.MaKH == t.MaKH);
+                if (kh == null)
                 {
                     return false;
                 }
-                p.TenPhong = t.TenPhong;
-                p.LoaiPhong = t.LoaiPhong;
-                p.GiaPhong = t.GiaPhong;
-                p.TrangThai = t.TrangThai;
+                kh.HoTenKH = t.HoTenKH;
+                kh.CCCD = t.CCCD;
+                kh.Email = t.Email;
+                kh.Phone = t.Phone;
                 db.SubmitChanges();
                 return true;
             }
