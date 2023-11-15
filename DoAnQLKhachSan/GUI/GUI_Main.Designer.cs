@@ -149,7 +149,8 @@
             this.accordionControlElement8.Appearance.Normal.Options.UseForeColor = true;
             this.accordionControlElement8.Name = "accordionControlElement8";
             this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement8.Text = "Danh sách phòng";
+            this.accordionControlElement8.Text = "Quản lý phòng";
+            this.accordionControlElement8.Click += new System.EventHandler(this.accordionControlElement8_Click);
             // 
             // accordionControlElement9
             // 

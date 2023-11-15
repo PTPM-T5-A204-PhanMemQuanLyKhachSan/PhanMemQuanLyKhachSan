@@ -14,12 +14,18 @@
         <elementListCompartment Id="93250197-3d21-40ad-9074-14391505bc03" absoluteBounds="1.6400000000000001, 1.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.625 : 3.16429768880208); (4.375 : 3.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.625 : 3.16429768880208); (4.375 : 3.16429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLKhachSanDataContext/NhanVien/NhanVien_QL_NguoiDung" />
       <nodes>
         <classShapeMoniker Id="212f7cfa-2ebe-4194-97a9-32880fdb0f79" />
         <classShapeMoniker Id="25bdbc36-3894-470b-95de-c2cf24ed4fdd" />
       </nodes>
     </associationConnector>
+    <classShape Id="54198bc6-5aea-4a25-8b81-47982741b13c" absoluteBounds="7.125, 1.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/QLKhachSanDataContext/Phong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7de10b43-7c7f-4e0c-a01c-5656b5f55c5a" absoluteBounds="7.14, 1.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

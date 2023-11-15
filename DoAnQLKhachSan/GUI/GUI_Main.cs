@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraBars;
+using DevExpress.XtraBars.FluentDesignSystem;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,13 @@ namespace GUI
         private void GUI_Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Program.GUI_DangNhap.Show();
+        }
+
+        private void accordionControlElement8_Click(object sender, EventArgs e)
+        {
+            fluentDesignFormContainer1.Controls.Clear();
+            GUI_QLPhong gui = new GUI_QLPhong();
+            fluentDesignFormContainer1.Controls.Add(gui);
         }
     }
 }
