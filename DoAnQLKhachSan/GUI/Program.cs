@@ -21,7 +21,7 @@ namespace GUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             GUI_DangNhap = new GUI_DangNhap();
-            Application.Run(new GUI_Main());
+            Application.Run(GUI_DangNhap);
         }
     }
 }

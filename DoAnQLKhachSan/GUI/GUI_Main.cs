@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraBars;
+using DevExpress.XtraBars.FluentDesignSystem;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,13 +16,32 @@ namespace GUI
         public GUI_Main()
         {
             InitializeComponent();
-            GUI_QLNhanVien gui = new GUI_QLNhanVien();
-            fluentDesignFormContainer1.Controls.Add(gui);
         }
 
         private void GUI_Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Program.GUI_DangNhap.Show();
+        }
+
+        private void accordionControlElement8_Click(object sender, EventArgs e)
+        {
+            fluentDesignFormContainer1.Controls.Clear();
+            GUI_QLPhong gui = new GUI_QLPhong();
+            fluentDesignFormContainer1.Controls.Add(gui);
+        }
+
+        private void accordionControlElement5_Click(object sender, EventArgs e)
+        {
+            fluentDesignFormContainer1.Controls.Clear();
+            GUI_QLNhanVien gui = new GUI_QLNhanVien();
+            fluentDesignFormContainer1.Controls.Add(gui);
+        }
+
+        private void accordionControlElement6_Click(object sender, EventArgs e)
+        {
+            fluentDesignFormContainer1.Controls.Clear();
+            GUI_QLKhachHang gui = new GUI_QLKhachHang();
+            fluentDesignFormContainer1.Controls.Add(gui);
         }
     }
 }

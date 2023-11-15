@@ -71,11 +71,23 @@
     <Compile Include="GUI_Main.Designer.cs">
       <DependentUpon>GUI_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_QLKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_QLKhachHang.Designer.cs">
+      <DependentUpon>GUI_QLKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_QLNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI_QLNhanVien.Designer.cs">
       <DependentUpon>GUI_QLNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_QLPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_QLPhong.designer.cs">
+      <DependentUpon>GUI_QLPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,8 +100,14 @@
     <EmbeddedResource Include="GUI_Main.resx">
       <DependentUpon>GUI_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_QLKhachHang.resx">
+      <DependentUpon>GUI_QLKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_QLNhanVien.resx">
       <DependentUpon>GUI_QLNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_QLPhong.resx">
+      <DependentUpon>GUI_QLPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -11,30 +11,37 @@ namespace BLL_DAL
         QLKhachSanDataContext db = new QLKhachSanDataContext();
         public BLL_DAL_NhanVien()
         {
-            
+
         }
 
         public bool updateNhanVien(NhanVien temp)
         {
-            NhanVien nv = db.NhanViens.FirstOrDefault(x => x.MaNV == temp.MaNV);
-            if (nv == null)
+            try
+            {
+                NhanVien nv = db.NhanViens.FirstOrDefault(x => x.MaNV == temp.MaNV);
+                if (nv == null)
+                {
+                    return false;
+                }
+                nv.HoTenNV = temp.HoTenNV;
+                nv.CCCD = temp.CCCD;
+                nv.ChucVu = temp.ChucVu;
+                nv.QueQuan = temp.QueQuan;
+                nv.DienThoai = temp.DienThoai;
+                nv.Hinh = temp.Hinh;
+                nv.Luong = temp.Luong;
+                nv.Phai = temp.Phai;
+                nv.NgaySinh = temp.NgaySinh;
+                nv.NgayVaoLam = temp.NgayVaoLam;
+                nv.TinhTrang = temp.TinhTrang;
+                nv.Hinh = temp.Hinh;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
             {
                 return false;
             }
-            nv.HoTenNV = temp.HoTenNV;
-            nv.CCCD = temp.CCCD;
-            nv.ChucVu = temp.ChucVu;
-            nv.QueQuan = temp.QueQuan;
-            nv.DienThoai = temp.DienThoai;
-            nv.Hinh = temp.Hinh;
-            nv.Luong = temp.Luong;
-            nv.Phai = temp.Phai;
-            nv.NgaySinh = temp.NgaySinh;
-            nv.NgayVaoLam = temp.NgayVaoLam;
-            nv.TinhTrang = temp.TinhTrang;
-            nv.Hinh = temp.Hinh;
-            db.SubmitChanges();
-            return true;
         }
 
         public List<NhanVien> loadDataNhanVien(string key)
@@ -45,9 +52,8 @@ namespace BLL_DAL
             }
             else
             {
-                return db.NhanViens.Where(x=>x.HoTenNV.Contains(key) || x.Phai.Contains(key) || x.QueQuan.Contains(key) || x.TinhTrang.Contains(key) || x.ChucVu.Contains(key)).ToList();
+                return db.NhanViens.Where(x => x.HoTenNV.Contains(key) || x.Phai.Contains(key) || x.QueQuan.Contains(key) || x.TinhTrang.Contains(key) || x.ChucVu.Contains(key)).ToList();
             }
-            
         }
 
         public bool themNhanVien(NhanVien nv)
@@ -66,14 +72,21 @@ namespace BLL_DAL
 
         public bool xoaNhanVien(int ma)
         {
-            NhanVien nv = db.NhanViens.FirstOrDefault(x => x.MaNV == ma);
-            if (nv == null)
+            try
+            {
+                NhanVien nv = db.NhanViens.FirstOrDefault(x => x.MaNV == ma);
+                if (nv == null)
+                {
+                    return false;
+                }
+                db.NhanViens.DeleteOnSubmit(nv);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
             {
                 return false;
             }
-            db.NhanViens.DeleteOnSubmit(nv);
-            db.SubmitChanges();
-            return true;
         }
     }
 }
