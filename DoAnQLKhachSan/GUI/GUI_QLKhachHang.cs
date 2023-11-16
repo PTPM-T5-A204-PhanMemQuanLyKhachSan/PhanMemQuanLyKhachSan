@@ -83,6 +83,12 @@ namespace GUI
         {
             if (MessageBox.Show("Bạn có chắc muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
+                if (dataGridView1.CurrentRow == null)
+                {
+                    MessageBox.Show("Vui lòng chọn khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (khachHangs.xoaKhachHang(Int32.Parse(dataGridView1.CurrentRow.Cells["MaKH"].Value.ToString())))
                 {
                     loadDGVKhachHang();
@@ -130,6 +136,12 @@ namespace GUI
             }
             if (isSua)
             {
+                if (dataGridView1.CurrentRow == null)
+                {
+                    MessageBox.Show("Vui lòng chọn khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 KhachHang kh = new KhachHang();
                 kh.MaKH = (int)dataGridView1.CurrentRow.Cells["MaKH"].Value;
                 kh.HoTenKH = txtHoTenKH.Text;

@@ -68,8 +68,6 @@ namespace GUI
         private void GUI_QLNhanVien_Load(object sender, EventArgs e)
         {
             loadDGVNhanVien();
-
-
             btnEnable(false);
             txtReadOnly(true);
             btnXoa.Enabled = false;
@@ -90,7 +88,6 @@ namespace GUI
                 btnEnable(false);
                 txtReadOnly(true);
 
-
                 txtHoTen.Text = dGVNhanVien.Rows[e.RowIndex].Cells["HoTenNV"].Value.ToString();
                 txtLuong.Text = dGVNhanVien.Rows[e.RowIndex].Cells["Luong"].Value.ToString();
                 cboGioiTinh.Text = dGVNhanVien.Rows[e.RowIndex].Cells["Phai"].Value.ToString();
@@ -109,6 +106,12 @@ namespace GUI
         {
             if (isSua)
             {
+                if (dGVNhanVien.CurrentRow == null)
+                {
+                    MessageBox.Show("Vui lòng chọn nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 NhanVien nv = new NhanVien();
                 nv.MaNV = (int)dGVNhanVien.CurrentRow.Cells["MaNV"].Value;
                 nv.HoTenNV = txtHoTen.Text;
@@ -217,6 +220,12 @@ namespace GUI
         {
             if (MessageBox.Show("Bạn có chắc muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
+                if (dGVNhanVien.CurrentRow == null)
+                {
+                    MessageBox.Show("Vui lòng chọn nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (nhanviens.xoaNhanVien(Int32.Parse(dGVNhanVien.CurrentRow.Cells["MaNV"].Value.ToString())))
                 {
                     loadDGVNhanVien();

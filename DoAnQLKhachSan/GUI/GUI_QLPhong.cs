@@ -84,6 +84,12 @@ namespace GUI
         {
             if (MessageBox.Show("Bạn có chắc muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
+                if (dataGridView1.CurrentRow == null)
+                {
+                    MessageBox.Show("Vui lòng chọn phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (phongs.xoaPhong(Int32.Parse(dataGridView1.CurrentRow.Cells["MaPhong"].Value.ToString())))
                 {
                     loadDGVPhong();
@@ -126,6 +132,12 @@ namespace GUI
             }
             if (isSua)
             {
+                if (dataGridView1.CurrentRow == null)
+                {
+                    MessageBox.Show("Vui lòng chọn phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 Phong phong = new Phong();
                 phong.MaPhong = (int)dataGridView1.CurrentRow.Cells["MaPhong"].Value;
                 phong.TenPhong = txtTenPhong.Text;
