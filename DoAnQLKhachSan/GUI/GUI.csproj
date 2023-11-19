@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietDatPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietDatPhong.Designer.cs">
+      <DependentUpon>ChiTietDatPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_CauHinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,18 @@
     </Compile>
     <Compile Include="GUI_Main.Designer.cs">
       <DependentUpon>GUI_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Phong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_Phong.Designer.cs">
+      <DependentUpon>GUI_Phong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_QLDatPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_QLDatPhong.Designer.cs">
+      <DependentUpon>GUI_QLDatPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_QLKhachHang.cs">
       <SubType>UserControl</SubType>
@@ -91,6 +109,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChiTietDatPhong.resx">
+      <DependentUpon>ChiTietDatPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_CauHinh.resx">
       <DependentUpon>GUI_CauHinh.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +120,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_Main.resx">
       <DependentUpon>GUI_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Phong.resx">
+      <DependentUpon>GUI_Phong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_QLDatPhong.resx">
+      <DependentUpon>GUI_QLDatPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_QLKhachHang.resx">
       <DependentUpon>GUI_QLKhachHang.cs</DependentUpon>

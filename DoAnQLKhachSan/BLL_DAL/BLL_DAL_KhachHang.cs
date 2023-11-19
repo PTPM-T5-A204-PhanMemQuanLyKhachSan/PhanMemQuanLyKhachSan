@@ -14,6 +14,11 @@ namespace BLL_DAL
 
         }
 
+        public KhachHang layKHTheoId(int id)
+        {
+            return db.KhachHangs.FirstOrDefault(t => t.MaKH == id);
+        }
+
         public List<KhachHang> LoadKhachHang(string key)
         {
             if (string.IsNullOrEmpty(key))
