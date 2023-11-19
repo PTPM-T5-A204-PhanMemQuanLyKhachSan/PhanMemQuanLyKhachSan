@@ -22,7 +22,7 @@ namespace BLL_DAL
             }
             else
             {
-                return db.Phongs.Where(x => x.TenPhong.Contains(key) || x.LoaiPhong.Contains(key) || x.GiaPhong.ToString().Contains(key) || x.TrangThai.Contains(key)).ToList();
+                return db.Phongs.Where(x => x.TenPhong.Contains(key) || x.LoaiPhong.TenLoai.Contains(key) || x.GiaPhong.ToString().Contains(key) || x.TrangThai.Contains(key)).ToList();
             }
         }
 

@@ -15,6 +15,7 @@ namespace GUI
     public partial class GUI_QLPhong : DevExpress.XtraEditors.XtraUserControl
     {
         BLL_DAL_Phong phongs = new BLL_DAL_Phong();
+        BLL_DAL_LoaiPhong loais = new BLL_DAL_LoaiPhong();
         bool isSua = false;
         bool isThem = false;
         public GUI_QLPhong()
@@ -24,14 +25,23 @@ namespace GUI
 
         private void GUI_QLPhong_Load(object sender, EventArgs e)
         {
+            loadCboLoai();
             loadDGVPhong();
             txtEnable(false);
             btnXoa.Enabled = btnSua.Enabled = btnLuu.Enabled = false;
         }
 
+        public void loadCboLoai()
+        {
+            cboLoaiPhong.DataSource = loais.LoadLoaiPhong();
+            cboLoaiPhong.ValueMember = "MaLoai";
+            cboLoaiPhong.DisplayMember = "TenLoai";
+        }
+
         public void loadDGVPhong()
         {
             dataGridView1.DataSource = phongs.LoadPhong("");
+            dataGridView1.Columns["LoaiPhong"].Visible = false;
         }
 
         public void txtEnable(bool e)
@@ -113,7 +123,7 @@ namespace GUI
                 Phong phong = new Phong();
                 phong.TenPhong = txtTenPhong.Text;
                 phong.GiaPhong = int.Parse(txtGiaPhong.Text);
-                phong.LoaiPhong = cboLoaiPhong.Text;
+                phong.MaLoai = (int)cboLoaiPhong.SelectedValue;
                 phong.TrangThai = cboTrangThai.Text;
 
                 if (phongs.themPhong(phong))
@@ -142,7 +152,7 @@ namespace GUI
                 phong.MaPhong = (int)dataGridView1.CurrentRow.Cells["MaPhong"].Value;
                 phong.TenPhong = txtTenPhong.Text;
                 phong.GiaPhong = int.Parse(txtGiaPhong.Text);
-                phong.LoaiPhong = cboLoaiPhong.Text;
+                phong.MaLoai = (int)cboLoaiPhong.SelectedValue;
                 phong.TrangThai = cboTrangThai.Text;
 
                 if (phongs.suaPhong(phong))
@@ -175,7 +185,7 @@ namespace GUI
 
                 txtTenPhong.Text = dataGridView1.CurrentRow.Cells["TenPhong"].Value.ToString();
                 txtGiaPhong.Text = dataGridView1.CurrentRow.Cells["GiaPhong"].Value.ToString();
-                cboLoaiPhong.SelectedIndex = cboLoaiPhong.FindStringExact(dataGridView1.CurrentRow.Cells["LoaiPhong"].Value.ToString());
+                cboLoaiPhong.SelectedValue = dataGridView1.CurrentRow.Cells["MaLoai"].Value;
                 cboTrangThai.SelectedIndex = cboTrangThai.FindStringExact(dataGridView1.CurrentRow.Cells["TrangThai"].Value.ToString());
             }
         }

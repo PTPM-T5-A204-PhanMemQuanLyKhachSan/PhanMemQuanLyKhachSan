@@ -180,11 +180,6 @@
             // cboLoaiPhong
             // 
             this.cboLoaiPhong.FormattingEnabled = true;
-            this.cboLoaiPhong.Items.AddRange(new object[] {
-            "Đơn",
-            "Đôi",
-            "Gia Đình",
-            "VIP"});
             this.cboLoaiPhong.Location = new System.Drawing.Point(205, 162);
             this.cboLoaiPhong.Name = "cboLoaiPhong";
             this.cboLoaiPhong.Size = new System.Drawing.Size(233, 24);
