@@ -14,6 +14,7 @@ namespace GUI
 {
     public partial class GUI_Phong : DevExpress.XtraEditors.XtraUserControl
     {
+        public event EventHandler ChiTietDatPhongClosed;
         public Phong p = new Phong();
         public GUI_Phong()
         {
@@ -26,7 +27,13 @@ namespace GUI
         {
             ChiTietDatPhong frm = new ChiTietDatPhong();
             frm.p = p;
+            frm.FormClosedEvent += Frm_FormClosedEvent;
             frm.ShowDialog();
+        }
+
+        private void Frm_FormClosedEvent(object sender, EventArgs e)
+        {
+            ChiTietDatPhongClosed?.Invoke(this, EventArgs.Empty);
         }
 
         private void GUI_Phong_Load(object sender, EventArgs e)

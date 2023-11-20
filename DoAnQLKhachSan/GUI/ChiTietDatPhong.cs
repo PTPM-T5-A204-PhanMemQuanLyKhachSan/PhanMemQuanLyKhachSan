@@ -15,6 +15,7 @@ namespace GUI
 {
     public partial class ChiTietDatPhong : DevExpress.XtraEditors.XtraForm
     {
+        public event EventHandler FormClosedEvent;
         public Phong p = new Phong();
         BLL_DAL_Phong phongs = new BLL_DAL_Phong();
         BLL_DAL_DichVu dichvus = new BLL_DAL_DichVu();
@@ -80,8 +81,6 @@ namespace GUI
                     txtPhone.Text = kh.Phone;
                 }
             }
-            
-
         }
 
         private void btnDatPhong_Click(object sender, EventArgs e)
@@ -93,7 +92,7 @@ namespace GUI
 
         private void ChiTietDatPhong_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            FormClosedEvent?.Invoke(this, EventArgs.Empty);
         }
     }
 }

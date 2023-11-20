@@ -78,7 +78,7 @@ namespace BLL_DAL
                     return false;
                 }
                 p.TenPhong = t.TenPhong;
-                p.LoaiPhong = t.LoaiPhong;
+                p.MaLoai = t.MaLoai;
                 p.GiaPhong = t.GiaPhong;
                 p.TrangThai = t.TrangThai;
                 db.SubmitChanges();

@@ -115,3 +115,6 @@ C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\obj\Deb
 C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\obj\Debug\GUI.GUI_Phong.resources
 C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\obj\Debug\GUI.GUI_QLDatPhong.resources
 C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\obj\Debug\GUI.ChiTietDatPhong.resources
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\GUI\obj\Debug\GUI.ChiTietDatPhong.resources
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\GUI\obj\Debug\GUI.GUI_Phong.resources
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\GUI\obj\Debug\GUI.GUI_QLDatPhong.resources

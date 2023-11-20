@@ -23,11 +23,12 @@ namespace GUI
 
         public void loadDanhSachPhong()
         {
+            pnDSPhong.Controls.Clear();
             int x = 10;
             int y = 20;
             int count = 0;
             List<LoaiPhong> dslp = loaiphongs.LoadLoaiPhong();
-            foreach(var item in dslp)
+            foreach (var item in dslp)
             {
                 Label lb = new Label();
                 lb.Text = item.TenLoai.ToString();
@@ -39,10 +40,11 @@ namespace GUI
                 y += 30;
                 foreach (var p in dsp)
                 {
-                    
+
                     GUI_Phong gUI_Phong = new GUI_Phong();
                     gUI_Phong.p = p;
                     gUI_Phong.Location = new Point(x, y);
+                    gUI_Phong.ChiTietDatPhongClosed += OnChiTietDatPhongClosed;
                     pnDSPhong.Controls.Add(gUI_Phong);
                     x += 110;
                 }
@@ -50,6 +52,11 @@ namespace GUI
                 y += 100;
             }
             groupBox1.Controls.Add(pnDSPhong);
+        }
+
+        private void OnChiTietDatPhongClosed(object sender, EventArgs e)
+        {
+            loadDanhSachPhong();
         }
     }
 }
