@@ -20,6 +20,8 @@ namespace GUI
         BLL_DAL_Phong phongs = new BLL_DAL_Phong();
         BLL_DAL_DichVu dichvus = new BLL_DAL_DichVu();
         BLL_DAL_KhachHang khs = new BLL_DAL_KhachHang();
+        BLL_DAL_ChiTietDichVu ctdvs = new BLL_DAL_ChiTietDichVu();
+        BLL_DAL_DatPhong datphongs = new BLL_DAL_DatPhong();
         public ChiTietDatPhong()
         {
             InitializeComponent();
@@ -39,18 +41,39 @@ namespace GUI
             cbxKH.ValueMember = "MaKH";
             cbxKH.SelectedIndex = -1;
 
+            
+
+
+            if(p.TrangThai == "Đã đặt")
+            {
+                btnDatPhong.Enabled = false;
+            }
+            if(p.TrangThai == "Đã thuê")
+            {
+                btnNhanPhong.Visible = false;
+                btnDatPhong.Text = "Lưu";
+                btnDatPhong.Enabled = true;
+
+                DatPhong dp = datphongs.layPhieuDatPhong(1);
+                dgvDichVu.DataSource = ctdvs.layDichVuTheoId(1);
+                dateCheckIn.Value = dp.CheckIn.Value;
+                dateCheckOut.Value = dp.CheckOut.Value;
+            }
+
+            
+
             txtReadOnly(false);
         }
 
         public void txtReadOnly(bool e)
         {
             txtCCCD.ReadOnly = !e;
-            txtEmail.ReadOnly = !e;
+            txtDiaChi.ReadOnly = !e;
             txtHoTenKH.ReadOnly = !e;
             txtPhone.ReadOnly = !e;
 
             txtCCCD.Clear();
-            txtEmail.Clear();
+            txtDiaChi.Clear();
             txtHoTenKH.Clear();
             txtPhone.Clear();
 
@@ -76,23 +99,43 @@ namespace GUI
                     KhachHang kh = khs.layKHTheoId((int)cbxKH.SelectedValue);
 
                     txtCCCD.Text = kh.CCCD;
-                    txtEmail.Text = kh.Email;
+                    txtDiaChi.Text = kh.DiaChi;
                     txtHoTenKH.Text = kh.HoTenKH;
-                    txtPhone.Text = kh.Phone;
+                    txtPhone.Text = kh.DienThoai;
                 }
             }
         }
 
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
-            p.TrangThai = "Có khách";
-            phongs.suaPhong(p);
-            this.Close();
+            if(btnDatPhong.Text == "Lưu")
+            {
+
+            }
+            else
+            {
+                p.TrangThai = "Đã đặt";
+                phongs.suaPhong(p);
+                this.Close();
+            }
+            
         }
 
         private void ChiTietDatPhong_FormClosed(object sender, FormClosedEventArgs e)
         {
             FormClosedEvent?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnNhanPhong_Click(object sender, EventArgs e)
+        {
+            p.TrangThai = "Đã thuê";
+            phongs.suaPhong(p);
+            this.Close();
+        }
+
+        private void btnThemDV_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

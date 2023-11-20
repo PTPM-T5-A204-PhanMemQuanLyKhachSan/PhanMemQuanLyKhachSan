@@ -27,7 +27,7 @@ namespace BLL_DAL
             }
             else
             {
-                return db.KhachHangs.Where(x => x.HoTenKH.Contains(key) || x.CCCD.Contains(key) || x.Email.Contains(key) || x.Phone.Contains(key)).ToList();
+                return db.KhachHangs.Where(x => x.HoTenKH.Contains(key) || x.CCCD.Contains(key) || x.DiaChi.Contains(key) || x.DienThoai.Contains(key)).ToList();
             }
         }
 
@@ -80,8 +80,8 @@ namespace BLL_DAL
                 }
                 kh.HoTenKH = t.HoTenKH;
                 kh.CCCD = t.CCCD;
-                kh.Email = t.Email;
-                kh.Phone = t.Phone;
+                kh.DiaChi = t.DiaChi;
+                kh.DienThoai = t.DienThoai;
                 db.SubmitChanges();
                 return true;
             }

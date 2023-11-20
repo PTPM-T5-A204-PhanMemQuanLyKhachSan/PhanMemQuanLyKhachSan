@@ -160,8 +160,9 @@
             this.cboTrangThai.FormattingEnabled = true;
             this.cboTrangThai.Items.AddRange(new object[] {
             "Trống",
+            "Đã đặt",
             "Đã thuê",
-            "Sửa chữa"});
+            "Bảo trì"});
             this.cboTrangThai.Location = new System.Drawing.Point(660, 162);
             this.cboTrangThai.Name = "cboTrangThai";
             this.cboTrangThai.Size = new System.Drawing.Size(233, 24);

@@ -53,7 +53,7 @@ namespace BLL_DAL
                 {
                     return false;
                 }
-                ChiTietDatPhong ctdp = db.ChiTietDatPhongs.FirstOrDefault(x => x.MaPhong == ma);
+                DatPhong ctdp = db.DatPhongs.FirstOrDefault(x => x.MaPhong == ma);
                 if (ctdp != null)
                 {
                     return false;

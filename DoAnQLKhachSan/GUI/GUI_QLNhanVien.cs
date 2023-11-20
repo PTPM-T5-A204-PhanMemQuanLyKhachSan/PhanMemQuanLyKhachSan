@@ -20,6 +20,7 @@ namespace GUI
         bool isSua = false;
         bool isThem = false;
         string sourcePath = null;
+        bool changeImg = false;
         public GUI_QLNhanVien()
         {
             InitializeComponent();
@@ -92,7 +93,7 @@ namespace GUI
                 txtLuong.Text = dGVNhanVien.Rows[e.RowIndex].Cells["Luong"].Value.ToString();
                 cboGioiTinh.Text = dGVNhanVien.Rows[e.RowIndex].Cells["Phai"].Value.ToString();
                 txtChucVu.Text = dGVNhanVien.Rows[e.RowIndex].Cells["ChucVu"].Value.ToString();
-                txtDiaChi.Text = dGVNhanVien.Rows[e.RowIndex].Cells["QueQuan"].Value.ToString();
+                txtDiaChi.Text = dGVNhanVien.Rows[e.RowIndex].Cells["DiaChi"].Value.ToString();
                 cboTinhTrang.Text = dGVNhanVien.Rows[e.RowIndex].Cells["TinhTrang"].Value.ToString();
                 txtDienThoai.Text = dGVNhanVien.Rows[e.RowIndex].Cells["DienThoai"].Value.ToString();
                 txtCCCD.Text = dGVNhanVien.Rows[e.RowIndex].Cells["CCCD"].Value.ToString();
@@ -117,15 +118,19 @@ namespace GUI
                 nv.HoTenNV = txtHoTen.Text;
                 nv.Phai = cboGioiTinh.Text;
                 nv.ChucVu = txtChucVu.Text;
-                nv.QueQuan = txtDiaChi.Text;
+                nv.DiaChi = txtDiaChi.Text;
                 nv.TinhTrang = cboTinhTrang.Text;
                 nv.DienThoai = txtDienThoai.Text;
                 nv.CCCD = txtCCCD.Text;
                 nv.Luong = Int32.Parse(txtLuong.Text);
                 nv.NgaySinh = dTPNgaySinh.Value;
                 nv.NgayVaoLam = dTPNgayVaoLam.Value;
-                nv.Hinh = lblHinh.Text;
-                File.Copy(sourcePath, Path.Combine("..//..//Resources", lblHinh.Text));
+                
+                if (changeImg)
+                {
+                    nv.Hinh = lblHinh.Text;
+                    File.Copy(sourcePath, Path.Combine("..//..//Resources", lblHinh.Text));
+                }
                 if (nhanviens.updateNhanVien(nv))
                 {
                     loadDGVNhanVien();
@@ -134,6 +139,7 @@ namespace GUI
                 else
                     MessageBox.Show("Có lỗi xảy ra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 isSua = false;
+                changeImg = false;
                 btnLuu.Enabled = false;
                 btnXoa.Enabled = true;
                 btnSua.Enabled = true;
@@ -143,12 +149,23 @@ namespace GUI
             }
             if (isThem)
             {
+                if (txtHoTen.Text==string.Empty || txtChucVu.Text==string.Empty || txtLuong.Text == string.Empty || txtDienThoai.Text == string.Empty || txtCCCD.Text== string.Empty || txtDiaChi.Text==string.Empty)
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                    return;
+                }
+                if (!changeImg)
+                {
+                    MessageBox.Show("Vui lòng chọn ảnh nhân viên!");
+                    return;
+                }
+                
                 NhanVien nv = new NhanVien();
                 //nv.MaNV = (int)dGVNhanVien.CurrentRow.Cells["MaNV"].Value;
                 nv.HoTenNV = txtHoTen.Text;
                 nv.Phai = cboGioiTinh.Text;
                 nv.ChucVu = txtChucVu.Text;
-                nv.QueQuan = txtDiaChi.Text;
+                nv.DiaChi = txtDiaChi.Text;
                 nv.TinhTrang = cboTinhTrang.Text;
                 nv.DienThoai = txtDienThoai.Text;
                 nv.CCCD = txtCCCD.Text;
@@ -165,6 +182,7 @@ namespace GUI
                 else
                     MessageBox.Show("Có lỗi xảy ra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 isThem = false;
+                changeImg = false;
                 btnLuu.Enabled = false;
                 btnXoa.Enabled = true;
                 btnSua.Enabled = true;
@@ -254,7 +272,7 @@ namespace GUI
                     string fileName = Path.GetFileName(openFileDialog1.FileName);
                     lblHinh.Text = fileName;
                     pictureBox1.Image = Image.FromFile(sourcePath);
-
+                    changeImg = true;
                 }
             }
             catch

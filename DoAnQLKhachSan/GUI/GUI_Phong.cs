@@ -42,9 +42,17 @@ namespace GUI
             {
                 btnPhong.BackColor = SystemColors.Window;
             }
-            else
+            else if(p.TrangThai == "Đã đặt")
             {
                 btnPhong.BackColor = Color.Aquamarine;
+
+            }else if(p.TrangThai == "Đã thuê")
+            {
+                btnPhong.BackColor = Color.DeepSkyBlue;
+            }
+            else
+            {
+                btnPhong.BackColor = Color.Yellow;
             }
             btnPhong.Text = p.TenPhong;
         }

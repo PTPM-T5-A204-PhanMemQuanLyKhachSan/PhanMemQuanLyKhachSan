@@ -26,7 +26,7 @@ namespace BLL_DAL
                 nv.HoTenNV = temp.HoTenNV;
                 nv.CCCD = temp.CCCD;
                 nv.ChucVu = temp.ChucVu;
-                nv.QueQuan = temp.QueQuan;
+                nv.DiaChi = temp.DiaChi;
                 nv.DienThoai = temp.DienThoai;
                 nv.Hinh = temp.Hinh;
                 nv.Luong = temp.Luong;
@@ -34,7 +34,6 @@ namespace BLL_DAL
                 nv.NgaySinh = temp.NgaySinh;
                 nv.NgayVaoLam = temp.NgayVaoLam;
                 nv.TinhTrang = temp.TinhTrang;
-                nv.Hinh = temp.Hinh;
                 db.SubmitChanges();
                 return true;
             }
@@ -52,7 +51,7 @@ namespace BLL_DAL
             }
             else
             {
-                return db.NhanViens.Where(x => x.HoTenNV.Contains(key) || x.Phai.Contains(key) || x.QueQuan.Contains(key) || x.TinhTrang.Contains(key) || x.ChucVu.Contains(key)).ToList();
+                return db.NhanViens.Where(x => x.HoTenNV.Contains(key) || x.Phai.Contains(key) || x.DiaChi.Contains(key) || x.TinhTrang.Contains(key) || x.ChucVu.Contains(key)).ToList();
             }
         }
 

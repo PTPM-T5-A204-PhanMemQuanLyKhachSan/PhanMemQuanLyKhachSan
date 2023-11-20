@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL_DAL_ChiTietDichVu.cs" />
+    <Compile Include="BLL_DAL_DatPhong.cs" />
     <Compile Include="BLL_DAL_DichVu.cs" />
     <Compile Include="BLL_DAL_KhachHang.cs" />
     <Compile Include="BLL_DAL_LoaiPhong.cs" />

@@ -30,10 +30,11 @@
         {
             this.txtTenPhong = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnTaoKH = new System.Windows.Forms.Button();
             this.cbxKH = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,21 +46,20 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnXoaDV = new System.Windows.Forms.Button();
+            this.btnThemDV = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSoLg = new System.Windows.Forms.TextBox();
             this.cbxDichVu = new System.Windows.Forms.ComboBox();
             this.dgvDichVu = new System.Windows.Forms.DataGridView();
             this.txtGiaPhong = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateCheckOut = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateCheckIn = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.btnDatPhong = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.btnTaoKH = new System.Windows.Forms.Button();
+            this.btnNhanPhong = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -82,7 +82,7 @@
             this.groupBox1.Controls.Add(this.cbxKH);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.txtDiaChi);
             this.groupBox1.Controls.Add(this.txtCCCD);
             this.groupBox1.Controls.Add(this.txtPhone);
             this.groupBox1.Controls.Add(this.label3);
@@ -95,6 +95,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
+            // 
+            // btnTaoKH
+            // 
+            this.btnTaoKH.Image = global::GUI.Properties.Resources.them;
+            this.btnTaoKH.Location = new System.Drawing.Point(394, 82);
+            this.btnTaoKH.Name = "btnTaoKH";
+            this.btnTaoKH.Size = new System.Drawing.Size(78, 42);
+            this.btnTaoKH.TabIndex = 9;
+            this.btnTaoKH.UseVisualStyleBackColor = true;
+            this.btnTaoKH.Click += new System.EventHandler(this.btnTaoKH_Click);
             // 
             // cbxKH
             // 
@@ -119,16 +129,16 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(11, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 16);
+            this.label4.Size = new System.Drawing.Size(46, 16);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Email";
+            this.label4.Text = "Địa chỉ";
             // 
-            // txtEmail
+            // txtDiaChi
             // 
-            this.txtEmail.Location = new System.Drawing.Point(9, 101);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(197, 23);
-            this.txtEmail.TabIndex = 5;
+            this.txtDiaChi.Location = new System.Drawing.Point(9, 101);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(197, 23);
+            this.txtDiaChi.TabIndex = 5;
             // 
             // txtCCCD
             // 
@@ -186,9 +196,9 @@
             this.groupBox2.Controls.Add(this.dgvDichVu);
             this.groupBox2.Controls.Add(this.txtGiaPhong);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.dateCheckOut);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.dateCheckIn);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(12, 197);
             this.groupBox2.Name = "groupBox2";
@@ -218,8 +228,8 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btnXoaDV);
+            this.groupBox3.Controls.Add(this.btnThemDV);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.txtSoLg);
             this.groupBox3.Controls.Add(this.cbxDichVu);
@@ -239,23 +249,24 @@
             this.label9.TabIndex = 5;
             this.label9.Text = "Tên dịch vụ";
             // 
-            // button2
+            // btnXoaDV
             // 
-            this.button2.Image = global::GUI.Properties.Resources.xoa;
-            this.button2.Location = new System.Drawing.Point(149, 92);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 44);
-            this.button2.TabIndex = 4;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnXoaDV.Image = global::GUI.Properties.Resources.xoa;
+            this.btnXoaDV.Location = new System.Drawing.Point(149, 92);
+            this.btnXoaDV.Name = "btnXoaDV";
+            this.btnXoaDV.Size = new System.Drawing.Size(55, 44);
+            this.btnXoaDV.TabIndex = 4;
+            this.btnXoaDV.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnThemDV
             // 
-            this.button1.Image = global::GUI.Properties.Resources.them;
-            this.button1.Location = new System.Drawing.Point(88, 92);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 44);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnThemDV.Image = global::GUI.Properties.Resources.them;
+            this.btnThemDV.Location = new System.Drawing.Point(88, 92);
+            this.btnThemDV.Name = "btnThemDV";
+            this.btnThemDV.Size = new System.Drawing.Size(55, 44);
+            this.btnThemDV.TabIndex = 3;
+            this.btnThemDV.UseVisualStyleBackColor = true;
+            this.btnThemDV.Click += new System.EventHandler(this.btnThemDV_Click);
             // 
             // label8
             // 
@@ -308,13 +319,13 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "Giá phòng";
             // 
-            // dateTimePicker2
+            // dateCheckOut
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(218, 48);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(140, 23);
-            this.dateTimePicker2.TabIndex = 3;
+            this.dateCheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateCheckOut.Location = new System.Drawing.Point(218, 48);
+            this.dateCheckOut.Name = "dateCheckOut";
+            this.dateCheckOut.Size = new System.Drawing.Size(140, 23);
+            this.dateCheckOut.TabIndex = 3;
             // 
             // label6
             // 
@@ -325,13 +336,13 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Check-out";
             // 
-            // dateTimePicker1
+            // dateCheckIn
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(14, 48);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(140, 23);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dateCheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateCheckIn.Location = new System.Drawing.Point(14, 48);
+            this.dateCheckIn.Name = "dateCheckIn";
+            this.dateCheckIn.Size = new System.Drawing.Size(140, 23);
+            this.dateCheckIn.TabIndex = 1;
             // 
             // label5
             // 
@@ -352,31 +363,22 @@
             this.btnDatPhong.UseVisualStyleBackColor = true;
             this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
             // 
-            // button5
+            // btnNhanPhong
             // 
-            this.button5.Location = new System.Drawing.Point(349, 538);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(106, 44);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Nhận phòng";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // btnTaoKH
-            // 
-            this.btnTaoKH.Image = global::GUI.Properties.Resources.them;
-            this.btnTaoKH.Location = new System.Drawing.Point(394, 82);
-            this.btnTaoKH.Name = "btnTaoKH";
-            this.btnTaoKH.Size = new System.Drawing.Size(78, 42);
-            this.btnTaoKH.TabIndex = 9;
-            this.btnTaoKH.UseVisualStyleBackColor = true;
-            this.btnTaoKH.Click += new System.EventHandler(this.btnTaoKH_Click);
+            this.btnNhanPhong.Location = new System.Drawing.Point(349, 538);
+            this.btnNhanPhong.Name = "btnNhanPhong";
+            this.btnNhanPhong.Size = new System.Drawing.Size(106, 44);
+            this.btnNhanPhong.TabIndex = 3;
+            this.btnNhanPhong.Text = "Nhận phòng";
+            this.btnNhanPhong.UseVisualStyleBackColor = true;
+            this.btnNhanPhong.Click += new System.EventHandler(this.btnNhanPhong_Click);
             // 
             // ChiTietDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 594);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnNhanPhong);
             this.Controls.Add(this.btnDatPhong);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -412,9 +414,9 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateCheckIn;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateCheckOut;
         private System.Windows.Forms.TextBox txtGiaPhong;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvDichVu;
@@ -425,12 +427,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnXoaDV;
+        private System.Windows.Forms.Button btnThemDV;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Button btnDatPhong;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnNhanPhong;
         private System.Windows.Forms.ComboBox cbxKH;
         private System.Windows.Forms.Button btnTaoKH;
     }

@@ -32,7 +32,7 @@ namespace GUI
 
         public void txtEnable(bool e)
         {
-            txtHoTenKH.ReadOnly = txtCCCD.ReadOnly = txtEmail.ReadOnly = txtSDT.ReadOnly = !e;
+            txtHoTenKH.ReadOnly = txtCCCD.ReadOnly = txtDiaChi.ReadOnly = txtSDT.ReadOnly = !e;
         }
 
         public void loadDGVKhachHang()
@@ -53,7 +53,7 @@ namespace GUI
 
         private void refesh()
         {
-            txtHoTenKH.Text = txtCCCD.Text = txtEmail.Text = txtSDT.Text = "";
+            txtHoTenKH.Text = txtCCCD.Text = txtDiaChi.Text = txtSDT.Text = "";
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -102,14 +102,9 @@ namespace GUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (txtHoTenKH.Text == string.Empty || txtCCCD.Text == string.Empty || txtEmail.Text == string.Empty || txtSDT.Text == string.Empty)
+            if (txtHoTenKH.Text == string.Empty || txtCCCD.Text == string.Empty || txtDiaChi.Text == string.Empty || txtSDT.Text == string.Empty)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (!IsEmail(txtEmail.Text))
-            {
-                MessageBox.Show("Email không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (isThem)
@@ -117,8 +112,8 @@ namespace GUI
                 KhachHang kh = new KhachHang();
                 kh.HoTenKH = txtHoTenKH.Text;
                 kh.CCCD = txtCCCD.Text;
-                kh.Email = txtEmail.Text;
-                kh.Phone = txtSDT.Text;
+                kh.DiaChi = txtDiaChi.Text;
+                kh.DienThoai = txtSDT.Text;
 
                 if (khachHangs.themKhachHang(kh))
                 {
@@ -146,8 +141,8 @@ namespace GUI
                 kh.MaKH = (int)dataGridView1.CurrentRow.Cells["MaKH"].Value;
                 kh.HoTenKH = txtHoTenKH.Text;
                 kh.CCCD = txtCCCD.Text;
-                kh.Email = txtEmail.Text;
-                kh.Phone = txtSDT.Text;
+                kh.DiaChi = txtDiaChi.Text;
+                kh.DienThoai = txtSDT.Text;
 
                 if (khachHangs.suaKhachHang(kh))
                 {
@@ -179,8 +174,8 @@ namespace GUI
 
                 txtHoTenKH.Text = dataGridView1.CurrentRow.Cells["HoTenKH"].Value.ToString();
                 txtCCCD.Text = dataGridView1.CurrentRow.Cells["CCCD"].Value.ToString();
-                txtEmail.Text = dataGridView1.CurrentRow.Cells["Email"].Value.ToString();
-                txtSDT.Text = dataGridView1.CurrentRow.Cells["Phone"].Value.ToString();
+                txtDiaChi.Text = dataGridView1.CurrentRow.Cells["DiaChi"].Value.ToString();
+                txtSDT.Text = dataGridView1.CurrentRow.Cells["DienThoai"].Value.ToString();
             }
         }
 
@@ -202,11 +197,6 @@ namespace GUI
                 txtCCCD.Text = txtCCCD.Text.Substring(0, maxlenght);
                 txtCCCD.SelectionStart = maxlenght;
             }
-        }
-
-        public bool IsEmail(string email)
-        {
-            return Regex.IsMatch(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
         }
     }
 }
