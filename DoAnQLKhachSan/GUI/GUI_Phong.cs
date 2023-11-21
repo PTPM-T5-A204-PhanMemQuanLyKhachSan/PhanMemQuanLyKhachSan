@@ -25,7 +25,7 @@ namespace GUI
 
         private void BtnPhong_Click(object sender, EventArgs e)
         {
-            ChiTietDatPhong frm = new ChiTietDatPhong();
+            GUI_ChiTietDatPhong frm = new GUI_ChiTietDatPhong();
             frm.p = p;
             frm.FormClosedEvent += Frm_FormClosedEvent;
             frm.ShowDialog();

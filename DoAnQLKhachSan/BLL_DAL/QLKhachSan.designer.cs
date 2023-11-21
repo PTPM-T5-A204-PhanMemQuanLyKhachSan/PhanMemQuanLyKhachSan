@@ -72,7 +72,7 @@ namespace BLL_DAL
     #endregion
 		
 		public QLKhachSanDataContext() : 
-				base(global::BLL_DAL.Properties.Settings.Default.QLKhachSanConnectionString1, mappingSource)
+				base(global::BLL_DAL.Properties.Settings.Default.QLKhachSanConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

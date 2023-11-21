@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class ChiTietDatPhong
+    partial class GUI_ChiTietDatPhong
     {
         /// <summary>
         /// Required designer variable.
@@ -43,7 +43,7 @@
             this.txtHoTenKH = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtTamTinh = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnXoaDV = new System.Windows.Forms.Button();
@@ -191,7 +191,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.txtTamTinh);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.dgvDichVu);
             this.groupBox2.Controls.Add(this.txtGiaPhong);
@@ -217,13 +217,13 @@
             this.label10.TabIndex = 10;
             this.label10.Text = "Tạm tính";
             // 
-            // textBox6
+            // txtTamTinh
             // 
-            this.textBox6.Location = new System.Drawing.Point(334, 284);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(217, 23);
-            this.textBox6.TabIndex = 9;
+            this.txtTamTinh.Location = new System.Drawing.Point(334, 284);
+            this.txtTamTinh.Name = "txtTamTinh";
+            this.txtTamTinh.ReadOnly = true;
+            this.txtTamTinh.Size = new System.Drawing.Size(217, 23);
+            this.txtTamTinh.TabIndex = 9;
             // 
             // groupBox3
             // 
@@ -257,6 +257,7 @@
             this.btnXoaDV.Size = new System.Drawing.Size(55, 44);
             this.btnXoaDV.TabIndex = 4;
             this.btnXoaDV.UseVisualStyleBackColor = true;
+            this.btnXoaDV.Click += new System.EventHandler(this.btnXoaDV_Click);
             // 
             // btnThemDV
             // 
@@ -283,6 +284,7 @@
             this.txtSoLg.Name = "txtSoLg";
             this.txtSoLg.Size = new System.Drawing.Size(58, 23);
             this.txtSoLg.TabIndex = 1;
+            this.txtSoLg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLg_KeyPress);
             // 
             // cbxDichVu
             // 
@@ -294,11 +296,13 @@
             // 
             // dgvDichVu
             // 
+            this.dgvDichVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDichVu.Location = new System.Drawing.Point(9, 92);
             this.dgvDichVu.Name = "dgvDichVu";
             this.dgvDichVu.RowHeadersWidth = 51;
             this.dgvDichVu.RowTemplate.Height = 24;
+            this.dgvDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDichVu.Size = new System.Drawing.Size(309, 215);
             this.dgvDichVu.TabIndex = 6;
             // 
@@ -326,6 +330,7 @@
             this.dateCheckOut.Name = "dateCheckOut";
             this.dateCheckOut.Size = new System.Drawing.Size(140, 23);
             this.dateCheckOut.TabIndex = 3;
+            this.dateCheckOut.ValueChanged += new System.EventHandler(this.dateCheckOut_ValueChanged);
             // 
             // label6
             // 
@@ -343,6 +348,7 @@
             this.dateCheckIn.Name = "dateCheckIn";
             this.dateCheckIn.Size = new System.Drawing.Size(140, 23);
             this.dateCheckIn.TabIndex = 1;
+            this.dateCheckIn.ValueChanged += new System.EventHandler(this.dateCheckIn_ValueChanged);
             // 
             // label5
             // 
@@ -373,7 +379,7 @@
             this.btnNhanPhong.UseVisualStyleBackColor = true;
             this.btnNhanPhong.Click += new System.EventHandler(this.btnNhanPhong_Click);
             // 
-            // ChiTietDatPhong
+            // GUI_ChiTietDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -384,9 +390,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtTenPhong);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "ChiTietDatPhong";
+            this.Name = "GUI_ChiTietDatPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChiTietDatPhong";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GUI_ChiTietDatPhong_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ChiTietDatPhong_FormClosed);
             this.Load += new System.EventHandler(this.ChiTietDatPhong_Load);
             this.groupBox1.ResumeLayout(false);
@@ -425,7 +432,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtSoLg;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtTamTinh;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnXoaDV;
         private System.Windows.Forms.Button btnThemDV;
