@@ -224,6 +224,7 @@
             this.txtTamTinh.ReadOnly = true;
             this.txtTamTinh.Size = new System.Drawing.Size(217, 23);
             this.txtTamTinh.TabIndex = 9;
+            this.txtTamTinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox3
             // 
@@ -284,6 +285,7 @@
             this.txtSoLg.Name = "txtSoLg";
             this.txtSoLg.Size = new System.Drawing.Size(58, 23);
             this.txtSoLg.TabIndex = 1;
+            this.txtSoLg.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSoLg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLg_KeyPress);
             // 
             // cbxDichVu
@@ -313,6 +315,7 @@
             this.txtGiaPhong.ReadOnly = true;
             this.txtGiaPhong.Size = new System.Drawing.Size(140, 23);
             this.txtGiaPhong.TabIndex = 5;
+            this.txtGiaPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label7
             // 

@@ -41,6 +41,9 @@
     <Reference Include="DevExpress.Sparkline.v22.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v22.2" />
     <Reference Include="DevExpress.Drawing.v22.2" />
+    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -89,6 +92,12 @@
     <Compile Include="GUI_QLDatPhong.Designer.cs">
       <DependentUpon>GUI_QLDatPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_QLDichVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_QLDichVu.Designer.cs">
+      <DependentUpon>GUI_QLDichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_QLKhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_QLDatPhong.resx">
       <DependentUpon>GUI_QLDatPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_QLDichVu.resx">
+      <DependentUpon>GUI_QLDichVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_QLKhachHang.resx">
       <DependentUpon>GUI_QLKhachHang.cs</DependentUpon>

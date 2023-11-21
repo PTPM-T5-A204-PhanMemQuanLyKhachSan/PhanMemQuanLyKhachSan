@@ -45,5 +45,12 @@ namespace GUI
             GUI_QLKhachHang gui = new GUI_QLKhachHang();
             fluentDesignFormContainer1.Controls.Add(gui);
         }
+
+        private void accordionControlElement9_Click(object sender, EventArgs e)
+        {
+            fluentDesignFormContainer1.Controls.Clear();
+            GUI_QLDichVu gui = new GUI_QLDichVu();
+            fluentDesignFormContainer1.Controls.Add(gui);
+        }
     }
 }

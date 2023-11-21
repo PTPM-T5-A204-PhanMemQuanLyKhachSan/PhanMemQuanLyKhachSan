@@ -22,8 +22,9 @@ namespace GUI
         BLL_DAL_KhachHang khs = new BLL_DAL_KhachHang();
         BLL_DAL_ChiTietDichVu ctdvs = new BLL_DAL_ChiTietDichVu();
         BLL_DAL_DatPhong datphongs = new BLL_DAL_DatPhong();
+        BLL_DAL_HoaDon hoadons = new BLL_DAL_HoaDon();
         DatPhong dp;
-        bool isThoat = false;
+        KhachHang kh;
         public GUI_ChiTietDatPhong()
         {
             InitializeComponent();
@@ -55,22 +56,36 @@ namespace GUI
                     dp = datphongs.layDPTheoTrangThai("Rỗng");
                 }
             }
+            else
+            {
+                dp = datphongs.layPhieuDatPhongTheoPhong(p.MaPhong);
+                dateCheckIn.Value = dp.CheckIn.Value;
+                dateCheckOut.Value = dp.CheckOut.Value;
+                txtTamTinh.Text = dp.TongTien.ToString();
+
+                kh = khs.layKHTheoId((int)dp.MaKH);
+                txtHoTenKH.Text = kh.HoTenKH;
+                txtCCCD.Text = kh.CCCD;
+                txtDiaChi.Text = kh.DiaChi;
+                txtPhone.Text = kh.DienThoai;
+
+                loadDGVDichVu();
+            }
 
             if (p.TrangThai == "Đã đặt")
             {
+                cbxKH.Enabled = false;
+                btnTaoKH.Enabled = false;
                 btnDatPhong.Enabled = false;
             }
 
             if (p.TrangThai == "Đã thuê")
             {
+                cbxKH.Enabled = false;
+                btnTaoKH.Enabled = false;
                 btnNhanPhong.Visible = false;
                 btnDatPhong.Text = "Lưu";
                 btnDatPhong.Enabled = true;
-
-                DatPhong dp = datphongs.layPhieuDatPhong(1);
-                dgvDichVu.DataSource = ctdvs.layDichVuTheoId(1);
-                dateCheckIn.Value = dp.CheckIn.Value;
-                dateCheckOut.Value = dp.CheckOut.Value;
             }
             txtReadOnly(false);
         }
@@ -81,17 +96,15 @@ namespace GUI
             txtDiaChi.ReadOnly = !e;
             txtHoTenKH.ReadOnly = !e;
             txtPhone.ReadOnly = !e;
-
-            txtCCCD.Clear();
-            txtDiaChi.Clear();
-            txtHoTenKH.Clear();
-            txtPhone.Clear();
-
         }
 
         private void btnTaoKH_Click(object sender, EventArgs e)
         {
             txtReadOnly(true);
+            txtCCCD.Clear();
+            txtDiaChi.Clear();
+            txtHoTenKH.Clear();
+            txtPhone.Clear();
             cbxKH.Text = "";
             btnTaoKH.Enabled = false;
             txtHoTenKH.Focus();
@@ -116,15 +129,49 @@ namespace GUI
             }
         }
 
-        private void btnDatPhong_Click(object sender, EventArgs e)
+        public void XuLyDatPhong()
         {
-            isThoat = true;
-            if (btnDatPhong.Text == "Lưu")
+            if (cbxKH.SelectedValue != null)
             {
-
+                kh = khs.layKHTheoId((int)cbxKH.SelectedValue);
             }
             else
             {
+                kh = new KhachHang();
+                kh.HoTenKH = txtHoTenKH.Text;
+                kh.CCCD = txtCCCD.Text;
+                kh.DienThoai = txtPhone.Text;
+                kh.DiaChi = txtDiaChi.Text;
+                khs.themKhachHang(kh);
+            }
+
+            HoaDon hd = new HoaDon();
+            hoadons.themHoaDon(hd);
+
+            dp.CheckIn = dateCheckIn.Value; dp.CheckOut = dateCheckOut.Value;
+            dp.TongTien = int.Parse(txtTamTinh.Text);
+            dp.MaKH = kh.MaKH;
+            dp.MaPhong = p.MaPhong;
+            dp.MaHD = hd.MaHD;
+            dp.TrangThai = "Chưa thanh toán";
+            datphongs.capNhatDatPhong(dp);
+        }
+
+        private void btnDatPhong_Click(object sender, EventArgs e)
+        {
+            
+            if (btnDatPhong.Text == "Lưu")
+            {
+                dp.CheckIn = dateCheckIn.Value; dp.CheckOut = dateCheckOut.Value;
+                dp.TongTien = int.Parse(txtTamTinh.Text);
+                dp.TrangThai = "Chưa thanh toán";
+                datphongs.capNhatDatPhong(dp);
+                this.Close();
+            }
+            else
+            {
+                XuLyDatPhong();
+
                 p.TrangThai = "Đã đặt";
                 phongs.suaPhong(p);
                 this.Close();
@@ -139,7 +186,8 @@ namespace GUI
 
         private void btnNhanPhong_Click(object sender, EventArgs e)
         {
-            isThoat = true;
+            XuLyDatPhong();
+
             p.TrangThai = "Đã thuê";
             phongs.suaPhong(p);
             this.Close();
@@ -147,6 +195,7 @@ namespace GUI
 
         private void btnThemDV_Click(object sender, EventArgs e)
         {
+            
             if (txtSoLg.Text == string.Empty)
             {
                 MessageBox.Show("Vui lòng nhập số lượng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -214,7 +263,7 @@ namespace GUI
 
         private void GUI_ChiTietDatPhong_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!isThoat)
+            if (dp.TrangThai=="Rỗng")
             {
                 ctdvs.xoaAllCTDV(dp.MaDP);
             }
