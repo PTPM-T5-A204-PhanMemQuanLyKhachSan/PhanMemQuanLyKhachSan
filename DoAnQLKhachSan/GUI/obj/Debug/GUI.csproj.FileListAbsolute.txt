@@ -214,3 +214,5 @@ D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\GUI\obj\Debug\GUI.GUI_ThongKe.resour
 D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\GUI\obj\Debug\GUI.exe.licenses
 D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\GUI\bin\Debug\HoaDon1.xlsx
 D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\GUI\bin\Debug\HoaDon2.xlsx
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\bin\Debug\HoaDon1.xlsx
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\bin\Debug\HoaDon2.xlsx

@@ -14,6 +14,21 @@ namespace BLL_DAL
 
         }
 
+        public List<Phong> layPhongTheoTrangThai(string TrangThai)
+        {
+            return db.Phongs.Where(t => t.TrangThai == TrangThai).ToList();
+        }
+
+        public List<Phong> layPhongTheoSDTKH(string ma)
+        {
+            var list = from p in db.Phongs
+                       join dp in db.DatPhongs on p.MaPhong equals dp.MaPhong
+                       join kh in db.KhachHangs on dp.MaKH equals kh.MaKH
+                       where kh.DienThoai == ma && dp.TrangThai == "Chưa thanh toán"
+                       select p;
+            return list.ToList<Phong>();
+        }
+
         public Phong layPhongTheoKey(int ma)
         {
             return db.Phongs.FirstOrDefault(t => t.MaPhong == ma);

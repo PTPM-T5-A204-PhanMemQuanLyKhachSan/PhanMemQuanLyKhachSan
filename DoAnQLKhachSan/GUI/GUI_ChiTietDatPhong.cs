@@ -42,6 +42,7 @@ namespace GUI
             cbxKH.DisplayMember = "HoTenKH";
             cbxKH.ValueMember = "MaKH";
             cbxKH.SelectedIndex = -1;
+            
 
             if (p.TrangThai == "Trống")
             {
@@ -64,6 +65,19 @@ namespace GUI
                 txtTamTinh.Text = dp.TongTien.ToString();
 
                 kh = khs.layKHTheoId((int)dp.MaKH);
+                if (kh != null)
+                {
+                    int count = 0;
+                    foreach (KhachHang item in cbxKH.Items)
+                    {
+                        if (item.MaKH == kh.MaKH)
+                        {
+                            cbxKH.SelectedIndex = count;
+                            break;
+                        }
+                        count++;
+                    }
+                }
                 txtHoTenKH.Text = kh.HoTenKH;
                 txtCCCD.Text = kh.CCCD;
                 txtDiaChi.Text = kh.DiaChi;
@@ -100,12 +114,12 @@ namespace GUI
 
         private void btnTaoKH_Click(object sender, EventArgs e)
         {
+            cbxKH.SelectedIndex = -1;
             txtReadOnly(true);
             txtCCCD.Clear();
             txtDiaChi.Clear();
             txtHoTenKH.Clear();
             txtPhone.Clear();
-            cbxKH.Text = "";
             btnTaoKH.Enabled = false;
             txtHoTenKH.Focus();
         }
@@ -137,6 +151,11 @@ namespace GUI
             }
             else
             {
+                if(txtHoTenKH.Text==string.Empty || txtCCCD.Text==string.Empty || txtPhone.Text==string.Empty || txtDiaChi.Text == string.Empty)
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo");
+                    return;
+                }
                 kh = new KhachHang();
                 kh.HoTenKH = txtHoTenKH.Text;
                 kh.CCCD = txtCCCD.Text;
