@@ -33,12 +33,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v22.2" />
+    <Reference Include="DevExpress.Charts.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v22.2" />
     <Reference Include="DevExpress.Data.v22.2" />
     <Reference Include="DevExpress.Printing.v22.2.Core" />
     <Reference Include="DevExpress.Utils.v22.2" />
+    <Reference Include="DevExpress.Utils.v22.2.UI, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v22.2" />
     <Reference Include="DevExpress.Sparkline.v22.2.Core" />
+    <Reference Include="DevExpress.XtraCharts.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v22.2.UI, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.2.Wizard, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v22.2" />
     <Reference Include="DevExpress.Drawing.v22.2" />
     <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -63,6 +68,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -141,6 +147,12 @@
     <Compile Include="GUI_ThanhToan.designer.cs">
       <DependentUpon>GUI_ThanhToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_ThongKe.Designer.cs">
+      <DependentUpon>GUI_ThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordExport.cs" />
@@ -177,6 +189,10 @@
     <EmbeddedResource Include="GUI_ThanhToan.resx">
       <DependentUpon>GUI_ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ThongKe.resx">
+      <DependentUpon>GUI_ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -223,6 +239,8 @@
     <None Include="Resources\timkiem.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Cash-icon.png" />
+    <None Include="Resources\coins-icon.png" />
     <Content Include="Resources\nv1.jpg" />
     <Content Include="Resources\nv2.png" />
     <Content Include="Resources\nv3.jpg" />

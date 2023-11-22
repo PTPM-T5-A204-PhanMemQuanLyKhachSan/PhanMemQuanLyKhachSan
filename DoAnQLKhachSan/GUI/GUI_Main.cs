@@ -24,6 +24,7 @@ namespace GUI
         public GUI_Main()
         {
             InitializeComponent();
+            
             GUI_QLDatPhong gui = new GUI_QLDatPhong();
             fluentDesignFormContainer1.Controls.Add(gui);
         }
@@ -116,6 +117,13 @@ namespace GUI
         {
             fluentDesignFormContainer1.Controls.Clear();
             GUI_QLDatPhong gui = new GUI_QLDatPhong();
+            fluentDesignFormContainer1.Controls.Add(gui);
+        }
+
+        private void accordionControlElement7_Click(object sender, EventArgs e)
+        {
+            fluentDesignFormContainer1.Controls.Clear();
+            GUI_ThongKe gui = new GUI_ThongKe();
             fluentDesignFormContainer1.Controls.Add(gui);
         }
     }
