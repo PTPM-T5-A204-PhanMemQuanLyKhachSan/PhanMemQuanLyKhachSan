@@ -30,6 +30,25 @@ namespace BLL_DAL
             return list;
         }
 
+        public List<Object> layDSInHD(int id)
+        {
+            var l = from hoaDon in db.HoaDons
+                    join datPhong in db.DatPhongs on hoaDon.MaHD equals datPhong.MaHD
+                    join chiTietDichVu in db.ChiTietDichVus on datPhong.MaDP equals chiTietDichVu.MaDP
+                    join dichVu in db.DichVus on chiTietDichVu.MaDV equals dichVu.MaDV
+                    join phong in db.Phongs on datPhong.MaPhong equals phong.MaPhong
+                    where hoaDon.MaHD == id
+                    select new
+                    {
+                        TenP = phong.TenPhong,
+                        TenDV = dichVu.TenDV,
+                        GiaDV = dichVu.GiaDV,
+                        SoLuong = chiTietDichVu.SoLuong,
+                        ThanhTien = chiTietDichVu.SoLuong * dichVu.GiaDV
+                    };
+            return l.ToList<Object>();
+        }
+
         public ChiTietDichVu layCTDVByKey(int madp, int madv)
         {
             return db.ChiTietDichVus.FirstOrDefault(t => t.MaDP == madp && t.MaDV == madv);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Objects.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,36 @@ namespace BLL_DAL
                         MaPhong = dp.MaPhong
                     };
             List<Object> list = l.ToList<Object>();
+            return list;
+        }
+
+        public List<Object> layDSInHD(int id)
+        {
+            var l = from phong in db.Phongs
+                    join datPhong in db.DatPhongs on phong.MaPhong equals datPhong.MaPhong
+                    join hoaDon in db.HoaDons on datPhong.MaHD equals hoaDon.MaHD
+                    where hoaDon.MaHD == id
+                    select new
+                    {
+                        STT = 0,
+                        TenPhong = phong.TenPhong,
+                        GiaPhong = phong.GiaPhong,
+                        SoNgay = ((DateTime)datPhong.CheckOut - (DateTime)datPhong.CheckIn).Days + 1,
+                        TongTien = phong.GiaPhong * (((DateTime)datPhong.CheckOut - (DateTime)datPhong.CheckIn).Days + 1)
+                    };
+            var queryList = l.ToList();
+            int stt = 1;
+
+            // Cập nhật số thứ tự trong kết quả
+            var t = queryList.Select(item => new
+            {
+                STT = stt++,
+                item.TenPhong,
+                item.GiaPhong,
+                item.SoNgay,
+                item.TongTien
+            });
+            List<Object> list = t.ToList<Object>();
             return list;
         }
 

@@ -25,7 +25,7 @@ namespace BLL_DAL
                         HoTenKH = kh.HoTenKH,
                         DienThoai = kh.DienThoai
                     };
-            List<Object> list = l.ToList<Object>();
+            List<Object> list = l.GroupBy(x => x.MaKH).Select(y => y.First()).ToList<Object>();
             return list;
         }
 

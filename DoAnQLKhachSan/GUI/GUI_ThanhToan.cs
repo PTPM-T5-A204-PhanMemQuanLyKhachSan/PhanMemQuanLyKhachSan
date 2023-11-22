@@ -122,7 +122,18 @@ namespace GUI
                 loadDGVKH();
                 if (MessageBox.Show("Bạn có muốn in hóa đơn không?", "Thanh toán thành công", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-
+                    ExcelExport ex = new ExcelExport();
+                    string s;
+                    List<Object> list = ctdvs.layDSInHD(hd.MaHD);
+                    if (list == null || (list != null && list.Count == 0))
+                    {
+                        s = "HoaDon1";
+                    }
+                    else
+                    {
+                        s = "HoaDon2";
+                    }
+                    ex.ExportHoaDon(dps.layDSInHD(hd.MaHD), list, hd, ref s, true);
                 }
             }
             catch (Exception)
