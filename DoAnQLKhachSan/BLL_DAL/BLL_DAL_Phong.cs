@@ -14,10 +14,16 @@ namespace BLL_DAL
 
         }
 
+        public Phong layPhongTheoKey(int ma)
+        {
+            return db.Phongs.FirstOrDefault(t => t.MaPhong == ma);
+        }
+
         public List<Phong> layPhongTheoLoai(int ma)
         {
             return db.Phongs.Where(t => t.MaLoai == ma).ToList();
         }
+
         public List<Phong> LoadPhong(string key)
         {
             if (string.IsNullOrEmpty(key))

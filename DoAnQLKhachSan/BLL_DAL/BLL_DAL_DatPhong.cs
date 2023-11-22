@@ -14,6 +14,29 @@ namespace BLL_DAL
 
         }
 
+        public List<Object> layDPTheoKH(int id)
+        {
+            var l = from dp in db.DatPhongs
+                    join p in db.Phongs on dp.MaPhong equals p.MaPhong
+                    where dp.MaKH == id && dp.TrangThai == "Chưa thanh toán"
+                    select new
+                    {
+                        MaDP = dp.MaDP,
+                        TenPhong = p.TenPhong,
+                        CheckIn = dp.CheckIn,
+                        CheckOut = dp.CheckOut,
+                        TongTien = dp.TongTien,
+                        MaPhong = dp.MaPhong
+                    };
+            List<Object> list = l.ToList<Object>();
+            return list;
+        }
+
+        public DatPhong layDPTheoKey(int id)
+        {
+            return db.DatPhongs.FirstOrDefault(t => t.MaDP == id);
+        }
+
         public DatPhong layPhieuDatPhongTheoPhong(int id)
         {
             return db.DatPhongs.FirstOrDefault(t => t.MaPhong == id && t.TrangThai == "Chưa thanh toán");

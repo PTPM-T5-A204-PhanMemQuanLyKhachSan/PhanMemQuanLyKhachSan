@@ -22,7 +22,6 @@ namespace GUI
         BLL_DAL_KhachHang khs = new BLL_DAL_KhachHang();
         BLL_DAL_ChiTietDichVu ctdvs = new BLL_DAL_ChiTietDichVu();
         BLL_DAL_DatPhong datphongs = new BLL_DAL_DatPhong();
-        BLL_DAL_HoaDon hoadons = new BLL_DAL_HoaDon();
         DatPhong dp;
         KhachHang kh;
         public GUI_ChiTietDatPhong()
@@ -47,6 +46,7 @@ namespace GUI
             if (p.TrangThai == "Trống")
             {
                 dateCheckIn.MinDate = dateCheckOut.MinDate = DateTime.Today;
+                dateCheckIn.Value = dateCheckOut.Value = DateTime.Today;
                 dp = datphongs.layDPTheoTrangThai("Rỗng");
                 if (dp == null)
                 {
@@ -145,21 +145,17 @@ namespace GUI
                 khs.themKhachHang(kh);
             }
 
-            HoaDon hd = new HoaDon();
-            hoadons.themHoaDon(hd);
-
             dp.CheckIn = dateCheckIn.Value; dp.CheckOut = dateCheckOut.Value;
             dp.TongTien = int.Parse(txtTamTinh.Text);
             dp.MaKH = kh.MaKH;
             dp.MaPhong = p.MaPhong;
-            dp.MaHD = hd.MaHD;
             dp.TrangThai = "Chưa thanh toán";
             datphongs.capNhatDatPhong(dp);
         }
 
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
-            
+
             if (btnDatPhong.Text == "Lưu")
             {
                 dp.CheckIn = dateCheckIn.Value; dp.CheckOut = dateCheckOut.Value;
@@ -195,7 +191,7 @@ namespace GUI
 
         private void btnThemDV_Click(object sender, EventArgs e)
         {
-            
+
             if (txtSoLg.Text == string.Empty)
             {
                 MessageBox.Show("Vui lòng nhập số lượng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -263,7 +259,7 @@ namespace GUI
 
         private void GUI_ChiTietDatPhong_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (dp.TrangThai=="Rỗng")
+            if (dp.TrangThai == "Rỗng")
             {
                 ctdvs.xoaAllCTDV(dp.MaDP);
             }

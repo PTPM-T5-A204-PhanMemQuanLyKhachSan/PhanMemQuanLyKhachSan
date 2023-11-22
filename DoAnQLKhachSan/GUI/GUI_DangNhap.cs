@@ -15,6 +15,7 @@ namespace GUI
     public partial class GUI_DangNhap : DevExpress.XtraEditors.XtraForm
     {
         BLL_DAL_QL_NguoiDung QL_NguoiDung;
+        BLL_DAL_NhanVien nhanVien;
         CauHinh CauHinh;
         public GUI_DangNhap()
         {
@@ -24,6 +25,7 @@ namespace GUI
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             QL_NguoiDung = new BLL_DAL_QL_NguoiDung();
+            nhanVien = new BLL_DAL_NhanVien();
             CauHinh = new CauHinh();
             if (string.IsNullOrEmpty(txtUsername.Text.Trim()))
             {
@@ -72,6 +74,8 @@ namespace GUI
             if (Program.GUI_Main == null || Program.GUI_Main.IsDisposed)
             {
                 Program.GUI_Main = new GUI_Main();
+                Program.GUI_Main.manv = nhanVien.getMaNV(txtUsername.Text);
+                Program.GUI_Main.tendn = txtUsername.Text;
             }
             this.Visible = false;
             Program.GUI_Main.Show();

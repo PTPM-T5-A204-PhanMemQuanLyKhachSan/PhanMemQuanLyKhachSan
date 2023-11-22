@@ -42,6 +42,8 @@
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
+            this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -98,6 +100,7 @@
             this.accordionControlElement2.Appearance.Normal.Options.UseForeColor = true;
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement2.Tag = "8";
             this.accordionControlElement2.Text = "Danh mục người sử dụng";
             // 
             // accordionControlElement3
@@ -110,6 +113,7 @@
             this.accordionControlElement3.Appearance.Normal.Options.UseForeColor = true;
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement3.Tag = "9";
             this.accordionControlElement3.Text = "Trợ giúp";
             // 
             // accordionControlElement4
@@ -129,6 +133,8 @@
             this.accordionControlElement9,
             this.accordionControlElement5,
             this.accordionControlElement6,
+            this.accordionControlElement11,
+            this.accordionControlElement10,
             this.accordionControlElement7});
             this.accordionControlElement4.Expanded = true;
             this.accordionControlElement4.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
@@ -149,6 +155,7 @@
             this.accordionControlElement8.Appearance.Normal.Options.UseForeColor = true;
             this.accordionControlElement8.Name = "accordionControlElement8";
             this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement8.Tag = "1";
             this.accordionControlElement8.Text = "Quản lý phòng";
             this.accordionControlElement8.Click += new System.EventHandler(this.accordionControlElement8_Click);
             // 
@@ -162,6 +169,7 @@
             this.accordionControlElement9.Appearance.Normal.Options.UseForeColor = true;
             this.accordionControlElement9.Name = "accordionControlElement9";
             this.accordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement9.Tag = "2";
             this.accordionControlElement9.Text = "Quản lý dịch vụ";
             this.accordionControlElement9.Click += new System.EventHandler(this.accordionControlElement9_Click);
             // 
@@ -175,6 +183,7 @@
             this.accordionControlElement5.Appearance.Normal.Options.UseForeColor = true;
             this.accordionControlElement5.Name = "accordionControlElement5";
             this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement5.Tag = "3";
             this.accordionControlElement5.Text = "Quản lý nhân viên";
             this.accordionControlElement5.Click += new System.EventHandler(this.accordionControlElement5_Click);
             // 
@@ -188,6 +197,7 @@
             this.accordionControlElement6.Appearance.Normal.Options.UseForeColor = true;
             this.accordionControlElement6.Name = "accordionControlElement6";
             this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement6.Tag = "4";
             this.accordionControlElement6.Text = "Quản lý khách hàng";
             this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click);
             // 
@@ -201,6 +211,7 @@
             this.accordionControlElement7.Appearance.Normal.Options.UseForeColor = true;
             this.accordionControlElement7.Name = "accordionControlElement7";
             this.accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement7.Tag = "7";
             this.accordionControlElement7.Text = "Báo cáo thống kê";
             // 
             // fluentDesignFormControl1
@@ -217,6 +228,34 @@
             // 
             this.fluentFormDefaultManager1.Form = this;
             // 
+            // accordionControlElement10
+            // 
+            this.accordionControlElement10.Appearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.accordionControlElement10.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement10.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.accordionControlElement10.Appearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.accordionControlElement10.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement10.Appearance.Normal.Options.UseForeColor = true;
+            this.accordionControlElement10.Name = "accordionControlElement10";
+            this.accordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement10.Tag = "6";
+            this.accordionControlElement10.Text = "Thanh toán";
+            this.accordionControlElement10.Click += new System.EventHandler(this.accordionControlElement10_Click);
+            // 
+            // accordionControlElement11
+            // 
+            this.accordionControlElement11.Appearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.accordionControlElement11.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement11.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.accordionControlElement11.Appearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.accordionControlElement11.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElement11.Appearance.Normal.Options.UseForeColor = true;
+            this.accordionControlElement11.Name = "accordionControlElement11";
+            this.accordionControlElement11.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement11.Tag = "5";
+            this.accordionControlElement11.Text = "Quản lý đặt phòng";
+            this.accordionControlElement11.Click += new System.EventHandler(this.accordionControlElement11_Click);
+            // 
             // GUI_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -232,6 +271,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GUI_Main";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GUI_Main_FormClosed);
+            this.Load += new System.EventHandler(this.GUI_Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
@@ -253,5 +293,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement10;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement11;
     }
 }

@@ -14,6 +14,21 @@ namespace BLL_DAL
 
         }
 
+        public List<Object> loadDSKhachHangCoHD()
+        {
+            var l = from kh in db.KhachHangs
+                    join dp in db.DatPhongs on kh.MaKH equals dp.MaKH
+                    where dp.TrangThai == "Chưa thanh toán"
+                    select new
+                    {
+                        MaKH = kh.MaKH,
+                        HoTenKH = kh.HoTenKH,
+                        DienThoai = kh.DienThoai
+                    };
+            List<Object> list = l.ToList<Object>();
+            return list;
+        }
+
         public KhachHang layKHTheoId(int id)
         {
             return db.KhachHangs.FirstOrDefault(t => t.MaKH == id);

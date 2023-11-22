@@ -14,6 +14,15 @@ namespace BLL_DAL
 
         }
 
+        public int getMaNV(string tendn)
+        {
+            int manv = (from qlnd in db.QL_NguoiDungs
+                        join nv in db.NhanViens on qlnd.MaNV equals nv.MaNV
+                        where qlnd.TenDangNhap == tendn
+                        select nv.MaNV).FirstOrDefault();
+            return manv;
+        }
+
         public bool updateNhanVien(NhanVien temp)
         {
             try
