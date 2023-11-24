@@ -60,6 +60,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnDatPhong = new System.Windows.Forms.Button();
             this.btnNhanPhong = new System.Windows.Forms.Button();
+            this.btnChuyenP = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -382,11 +383,22 @@
             this.btnNhanPhong.UseVisualStyleBackColor = true;
             this.btnNhanPhong.Click += new System.EventHandler(this.btnNhanPhong_Click);
             // 
+            // btnChuyenP
+            // 
+            this.btnChuyenP.Location = new System.Drawing.Point(12, 538);
+            this.btnChuyenP.Name = "btnChuyenP";
+            this.btnChuyenP.Size = new System.Drawing.Size(106, 44);
+            this.btnChuyenP.TabIndex = 4;
+            this.btnChuyenP.Text = "Chuyển phòng";
+            this.btnChuyenP.UseVisualStyleBackColor = true;
+            this.btnChuyenP.Click += new System.EventHandler(this.btnChuyenP_Click);
+            // 
             // GUI_ChiTietDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 594);
+            this.Controls.Add(this.btnChuyenP);
             this.Controls.Add(this.btnNhanPhong);
             this.Controls.Add(this.btnDatPhong);
             this.Controls.Add(this.groupBox2);
@@ -445,5 +457,6 @@
         private System.Windows.Forms.Button btnNhanPhong;
         private System.Windows.Forms.ComboBox cbxKH;
         private System.Windows.Forms.Button btnTaoKH;
+        private System.Windows.Forms.Button btnChuyenP;
     }
 }

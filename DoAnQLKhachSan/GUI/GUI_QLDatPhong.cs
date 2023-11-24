@@ -55,8 +55,12 @@ namespace GUI
                     count++;
 
                 }
-                x = 10;
-                y += 80;
+                if (count != 0)
+                {
+                    x = 10;
+                    y += 80;
+                }
+                count = 0;
             }
             groupBox1.Controls.Add(pnDSPhong);
         }
@@ -65,11 +69,6 @@ namespace GUI
         {
             loadDanhSachPhong();
         }
-
-
-
-
-       
         
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
@@ -125,12 +124,6 @@ namespace GUI
                 loadDanhSachPhong();
             }
         }
-
-
-
-
-
-
 
 
         public void loadDSPhongTheoTrangThai(List<Phong> dsP)

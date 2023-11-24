@@ -16,6 +16,7 @@ namespace GUI
     public partial class GUI_ChiTietDatPhong : DevExpress.XtraEditors.XtraForm
     {
         public event EventHandler FormClosedEvent;
+        public event EventHandler ChuyenPhongClosed;
         public Phong p = new Phong();
         BLL_DAL_Phong phongs = new BLL_DAL_Phong();
         BLL_DAL_DichVu dichvus = new BLL_DAL_DichVu();
@@ -56,6 +57,7 @@ namespace GUI
                     datphongs.themDatPhong(dp);
                     dp = datphongs.layDPTheoTrangThai("Rỗng");
                 }
+                btnChuyenP.Visible = false;
             }
             else
             {
@@ -84,6 +86,8 @@ namespace GUI
                 txtPhone.Text = kh.DienThoai;
 
                 loadDGVDichVu();
+
+                btnChuyenP.Visible = true;
             }
 
             if (p.TrangThai == "Đã đặt")
@@ -143,7 +147,7 @@ namespace GUI
             }
         }
 
-        public void XuLyDatPhong()
+        public bool XuLyDatPhong()
         {
             if (cbxKH.SelectedValue != null)
             {
@@ -154,7 +158,7 @@ namespace GUI
                 if(txtHoTenKH.Text==string.Empty || txtCCCD.Text==string.Empty || txtPhone.Text==string.Empty || txtDiaChi.Text == string.Empty)
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo");
-                    return;
+                    return false;
                 }
                 kh = new KhachHang();
                 kh.HoTenKH = txtHoTenKH.Text;
@@ -170,6 +174,7 @@ namespace GUI
             dp.MaPhong = p.MaPhong;
             dp.TrangThai = "Chưa thanh toán";
             datphongs.capNhatDatPhong(dp);
+            return true;
         }
 
         private void btnDatPhong_Click(object sender, EventArgs e)
@@ -185,11 +190,12 @@ namespace GUI
             }
             else
             {
-                XuLyDatPhong();
-
-                p.TrangThai = "Đã đặt";
-                phongs.suaPhong(p);
-                this.Close();
+                if (XuLyDatPhong())
+                {
+                    p.TrangThai = "Đã đặt";
+                    phongs.suaPhong(p);
+                    this.Close();
+                }
             }
 
         }
@@ -201,11 +207,12 @@ namespace GUI
 
         private void btnNhanPhong_Click(object sender, EventArgs e)
         {
-            XuLyDatPhong();
-
-            p.TrangThai = "Đã thuê";
-            phongs.suaPhong(p);
-            this.Close();
+            if (XuLyDatPhong())
+            {
+                p.TrangThai = "Đã thuê";
+                phongs.suaPhong(p);
+                this.Close();
+            }
         }
 
         private void btnThemDV_Click(object sender, EventArgs e)
@@ -301,6 +308,20 @@ namespace GUI
         private void dateCheckOut_ValueChanged(object sender, EventArgs e)
         {
             loadTamTinh();
+        }
+
+        private void btnChuyenP_Click(object sender, EventArgs e)
+        {
+            GUI_ChuyenPhong frm = new GUI_ChuyenPhong();
+            frm.dp = dp;
+            frm.FormClosedEvent += Frm_FormClosedEvent;
+            frm.ShowDialog();
+            
+        }
+
+        private void Frm_FormClosedEvent(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

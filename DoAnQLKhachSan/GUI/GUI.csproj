@@ -95,6 +95,12 @@
     <Compile Include="GUI_CauHinh.Designer.cs">
       <DependentUpon>GUI_CauHinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_ChuyenPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ChuyenPhong.Designer.cs">
+      <DependentUpon>GUI_ChuyenPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_CauHinh.resx">
       <DependentUpon>GUI_CauHinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ChuyenPhong.resx">
+      <DependentUpon>GUI_ChuyenPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_DangNhap.resx">
       <DependentUpon>GUI_DangNhap.cs</DependentUpon>

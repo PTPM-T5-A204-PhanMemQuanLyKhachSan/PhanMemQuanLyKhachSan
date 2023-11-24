@@ -115,15 +115,20 @@ namespace GUI
 
         private void accordionControlElement11_Click(object sender, EventArgs e)
         {
-            fluentDesignFormContainer1.Controls.Clear();
-            GUI_QLDatPhong gui = new GUI_QLDatPhong();
-            fluentDesignFormContainer1.Controls.Add(gui);
+            loadQLDatPhong();
         }
 
         private void accordionControlElement7_Click(object sender, EventArgs e)
         {
             fluentDesignFormContainer1.Controls.Clear();
             GUI_ThongKe gui = new GUI_ThongKe();
+            fluentDesignFormContainer1.Controls.Add(gui);
+        }
+
+        public void loadQLDatPhong()
+        {
+            fluentDesignFormContainer1.Controls.Clear();
+            GUI_QLDatPhong gui = new GUI_QLDatPhong();
             fluentDesignFormContainer1.Controls.Add(gui);
         }
     }
