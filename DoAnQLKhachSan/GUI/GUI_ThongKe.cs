@@ -27,25 +27,27 @@ namespace GUI
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            LoadDoanhThu();
+            //LoadDoanhThu();
             
         }
 
         private void GUI_ThongKe_Load(object sender, EventArgs e)
         {
             dateTimePicker1.Value = dateTimePicker2.Value =  DateTime.Now;
+            LoadDoanhThu();
         }
 
         public void LoadDoanhThu()
         {
             chartControl1.Series.Clear();
             Series series1 = new Series("Doanh thu khách sạn", ViewType.Pie);
-
+            txtSP.Text = tk.SoLuongPhong(dateTimePicker1.Value, dateTimePicker2.Value).ToString();
             List<DoanhThu> l = tk.LoadDanhThu(dateTimePicker1.Value, dateTimePicker2.Value);
             if(l.Count() < 1)
             {
                 txtDTP.Text = "0 VND";
                 txtDTDV.Text = "0 VND";
+                txtSP.Text = "0";
             }
             foreach (DoanhThu d in l)
             {
@@ -62,6 +64,7 @@ namespace GUI
                     txtDTDV.Text = string.Format("{0:N0} VND", temp);
                 }
             }
+            
             series1.Label.TextPattern = "{A}: {VP: p0}";
             chartControl1.Series.Add(series1);
         }
@@ -69,6 +72,11 @@ namespace GUI
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             dateTimePicker2.MinDate = dateTimePicker1.Value;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadDoanhThu();
         }
     }
 }

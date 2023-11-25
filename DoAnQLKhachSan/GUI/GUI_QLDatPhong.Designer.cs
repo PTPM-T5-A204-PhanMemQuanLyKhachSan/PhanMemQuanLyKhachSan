@@ -32,8 +32,8 @@
             this.pnDSPhong = new System.Windows.Forms.Panel();
             this.btnTrong = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnDaDat = new System.Windows.Forms.Button();
             this.btnDangThue = new System.Windows.Forms.Button();
+            this.btnDaDat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -83,17 +83,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Trạng thái phòng";
             // 
-            // btnDaDat
-            // 
-            this.btnDaDat.BackColor = System.Drawing.Color.Aquamarine;
-            this.btnDaDat.Location = new System.Drawing.Point(114, 22);
-            this.btnDaDat.Name = "btnDaDat";
-            this.btnDaDat.Size = new System.Drawing.Size(96, 63);
-            this.btnDaDat.TabIndex = 1;
-            this.btnDaDat.Text = "Đã đặt";
-            this.btnDaDat.UseVisualStyleBackColor = false;
-            this.btnDaDat.Click += new System.EventHandler(this.btnDaDat_Click);
-            // 
             // btnDangThue
             // 
             this.btnDangThue.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -104,6 +93,17 @@
             this.btnDangThue.Text = "Đang thuê";
             this.btnDangThue.UseVisualStyleBackColor = false;
             this.btnDangThue.Click += new System.EventHandler(this.btnDangThue_Click);
+            // 
+            // btnDaDat
+            // 
+            this.btnDaDat.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnDaDat.Location = new System.Drawing.Point(114, 22);
+            this.btnDaDat.Name = "btnDaDat";
+            this.btnDaDat.Size = new System.Drawing.Size(96, 63);
+            this.btnDaDat.TabIndex = 1;
+            this.btnDaDat.Text = "Đã đặt";
+            this.btnDaDat.UseVisualStyleBackColor = false;
+            this.btnDaDat.Click += new System.EventHandler(this.btnDaDat_Click);
             // 
             // label1
             // 
@@ -117,7 +117,7 @@
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(734, 268);
+            this.txtSDT.Location = new System.Drawing.Point(15, 202);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(162, 23);
             this.txtSDT.TabIndex = 4;
@@ -126,7 +126,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(731, 246);
+            this.label2.Location = new System.Drawing.Point(12, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 16);
             this.label2.TabIndex = 5;

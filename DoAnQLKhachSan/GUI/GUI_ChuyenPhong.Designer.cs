@@ -50,13 +50,13 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(675, 256);
+            this.groupControl1.Size = new System.Drawing.Size(301, 188);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Chọn phòng chuyển đến";
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(255, 181);
+            this.btnHuy.Location = new System.Drawing.Point(173, 129);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(106, 44);
             this.btnHuy.TabIndex = 4;
@@ -66,7 +66,7 @@
             // 
             // btnChuyenPhong
             // 
-            this.btnChuyenPhong.Location = new System.Drawing.Point(107, 181);
+            this.btnChuyenPhong.Location = new System.Drawing.Point(18, 129);
             this.btnChuyenPhong.Name = "btnChuyenPhong";
             this.btnChuyenPhong.Size = new System.Drawing.Size(106, 44);
             this.btnChuyenPhong.TabIndex = 4;
@@ -77,7 +77,7 @@
             // lbPhongHT
             // 
             this.lbPhongHT.AutoSize = true;
-            this.lbPhongHT.Location = new System.Drawing.Point(213, 68);
+            this.lbPhongHT.Location = new System.Drawing.Point(147, 43);
             this.lbPhongHT.Name = "lbPhongHT";
             this.lbPhongHT.Size = new System.Drawing.Size(41, 16);
             this.lbPhongHT.TabIndex = 3;
@@ -86,7 +86,7 @@
             // cboPhong
             // 
             this.cboPhong.FormattingEnabled = true;
-            this.cboPhong.Location = new System.Drawing.Point(213, 109);
+            this.cboPhong.Location = new System.Drawing.Point(147, 84);
             this.cboPhong.Name = "cboPhong";
             this.cboPhong.Size = new System.Drawing.Size(132, 24);
             this.cboPhong.TabIndex = 2;
@@ -94,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(81, 112);
+            this.label2.Location = new System.Drawing.Point(15, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 16);
             this.label2.TabIndex = 1;
@@ -103,7 +103,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(104, 68);
+            this.label1.Location = new System.Drawing.Point(38, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 16);
             this.label1.TabIndex = 0;
@@ -113,8 +113,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 256);
+            this.ClientSize = new System.Drawing.Size(301, 188);
             this.Controls.Add(this.groupControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GUI_ChuyenPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GUI_ChuyenPhong";

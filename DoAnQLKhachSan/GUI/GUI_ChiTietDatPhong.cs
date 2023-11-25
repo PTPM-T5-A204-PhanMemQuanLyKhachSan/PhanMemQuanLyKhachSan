@@ -91,9 +91,9 @@ namespace GUI
 
             if (p.TrangThai == "Đã đặt")
             {
+                btnDatPhong.Text = "Lưu";
                 cbxKH.Enabled = false;
                 btnTaoKH.Enabled = false;
-                btnDatPhong.Enabled = false;
             }
 
             if (p.TrangThai == "Đã thuê")

@@ -44,6 +44,27 @@ namespace BLL_DAL
             return list;
         }
 
+        public int SoLuongPhong(DateTime bd, DateTime kt)
+        {
+            int count = 0;
+
+            using (SqlConnection connection = new SqlConnection(BLL_DAL.Properties.Settings.Default.QLKhachSanConnectionString))
+            {
+                connection.Open();
+
+                string query = "Select count(dp.MaDP) from DatPhong dp, HoaDon hd where dp.MaHD = hd.MaHD and NgayThanhToan >= @StartDate and NgayThanhToan <= @EndDate";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@StartDate", bd);
+                    command.Parameters.AddWithValue("@EndDate", kt);
+
+                    count = (int)command.ExecuteScalar();
+                }
+            }
+
+            return count;
+        }
+
         public ThongKe()
         {
 
