@@ -29,7 +29,7 @@ namespace GUI
 
         #region ---- Member variables ----
 
-        private IWorkbook _workBook;
+        //private IWorkbook _workBook;
 
         #endregion
 
@@ -284,7 +284,8 @@ namespace GUI
         /// </summary>
         /// <param name="isPrint">if set to <c>true</c> [is print].</param>
         /// <returns></returns>
-        private string SaveExcel(ExcelEngine xslEngine, bool isPrint, string defaultName = "", bool usingStyle = false)
+      
+        /*private string SaveExcel(ExcelEngine xslEngine, bool isPrint, string defaultName = "", bool usingStyle = false)
         {
             string result = string.Empty;
 
@@ -330,7 +331,7 @@ namespace GUI
             }
 
             return result;
-        }
+        }*/
 
         #endregion
 
@@ -490,7 +491,7 @@ namespace GUI
                     wb.PrintPreview(true);
                 }
             }
-            catch (Exception ex)
+            catch /*(Exception ex)*/
             {
                 //ShowMessage
             }

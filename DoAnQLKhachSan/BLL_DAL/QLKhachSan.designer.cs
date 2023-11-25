@@ -63,9 +63,6 @@ namespace BLL_DAL
     partial void InsertQL_NguoiDung(QL_NguoiDung instance);
     partial void UpdateQL_NguoiDung(QL_NguoiDung instance);
     partial void DeleteQL_NguoiDung(QL_NguoiDung instance);
-    partial void InsertQL_NguoiDungNhomNguoiDung(QL_NguoiDungNhomNguoiDung instance);
-    partial void UpdateQL_NguoiDungNhomNguoiDung(QL_NguoiDungNhomNguoiDung instance);
-    partial void DeleteQL_NguoiDungNhomNguoiDung(QL_NguoiDungNhomNguoiDung instance);
     partial void InsertQL_NhomNguoiDung(QL_NhomNguoiDung instance);
     partial void UpdateQL_NhomNguoiDung(QL_NhomNguoiDung instance);
     partial void DeleteQL_NhomNguoiDung(QL_NhomNguoiDung instance);
@@ -186,14 +183,6 @@ namespace BLL_DAL
 			get
 			{
 				return this.GetTable<QL_NguoiDung>();
-			}
-		}
-		
-		public System.Data.Linq.Table<QL_NguoiDungNhomNguoiDung> QL_NguoiDungNhomNguoiDungs
-		{
-			get
-			{
-				return this.GetTable<QL_NguoiDungNhomNguoiDung>();
 			}
 		}
 		
@@ -2349,9 +2338,11 @@ namespace BLL_DAL
 		
 		private System.Nullable<int> _MaNV;
 		
-		private EntitySet<QL_NguoiDungNhomNguoiDung> _QL_NguoiDungNhomNguoiDungs;
+		private System.Nullable<int> _MaNhomNguoiDung;
 		
 		private EntityRef<NhanVien> _NhanVien;
+		
+		private EntityRef<QL_NhomNguoiDung> _QL_NhomNguoiDung;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2365,12 +2356,14 @@ namespace BLL_DAL
     partial void OnHoatDongChanged();
     partial void OnMaNVChanging(System.Nullable<int> value);
     partial void OnMaNVChanged();
+    partial void OnMaNhomNguoiDungChanging(System.Nullable<int> value);
+    partial void OnMaNhomNguoiDungChanged();
     #endregion
 		
 		public QL_NguoiDung()
 		{
-			this._QL_NguoiDungNhomNguoiDungs = new EntitySet<QL_NguoiDungNhomNguoiDung>(new Action<QL_NguoiDungNhomNguoiDung>(this.attach_QL_NguoiDungNhomNguoiDungs), new Action<QL_NguoiDungNhomNguoiDung>(this.detach_QL_NguoiDungNhomNguoiDungs));
 			this._NhanVien = default(EntityRef<NhanVien>);
+			this._QL_NhomNguoiDung = default(EntityRef<QL_NhomNguoiDung>);
 			OnCreated();
 		}
 		
@@ -2458,16 +2451,27 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QL_NguoiDung_QL_NguoiDungNhomNguoiDung", Storage="_QL_NguoiDungNhomNguoiDungs", ThisKey="TenDangNhap", OtherKey="TenDangNhap")]
-		public EntitySet<QL_NguoiDungNhomNguoiDung> QL_NguoiDungNhomNguoiDungs
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhomNguoiDung", DbType="Int")]
+		public System.Nullable<int> MaNhomNguoiDung
 		{
 			get
 			{
-				return this._QL_NguoiDungNhomNguoiDungs;
+				return this._MaNhomNguoiDung;
 			}
 			set
 			{
-				this._QL_NguoiDungNhomNguoiDungs.Assign(value);
+				if ((this._MaNhomNguoiDung != value))
+				{
+					if (this._QL_NhomNguoiDung.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaNhomNguoiDungChanging(value);
+					this.SendPropertyChanging();
+					this._MaNhomNguoiDung = value;
+					this.SendPropertyChanged("MaNhomNguoiDung");
+					this.OnMaNhomNguoiDungChanged();
+				}
 			}
 		}
 		
@@ -2505,177 +2509,7 @@ namespace BLL_DAL
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_QL_NguoiDungNhomNguoiDungs(QL_NguoiDungNhomNguoiDung entity)
-		{
-			this.SendPropertyChanging();
-			entity.QL_NguoiDung = this;
-		}
-		
-		private void detach_QL_NguoiDungNhomNguoiDungs(QL_NguoiDungNhomNguoiDung entity)
-		{
-			this.SendPropertyChanging();
-			entity.QL_NguoiDung = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.QL_NguoiDungNhomNguoiDung")]
-	public partial class QL_NguoiDungNhomNguoiDung : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _TenDangNhap;
-		
-		private int _MaNhomNguoiDung;
-		
-		private string _GhiChu;
-		
-		private EntityRef<QL_NguoiDung> _QL_NguoiDung;
-		
-		private EntityRef<QL_NhomNguoiDung> _QL_NhomNguoiDung;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTenDangNhapChanging(string value);
-    partial void OnTenDangNhapChanged();
-    partial void OnMaNhomNguoiDungChanging(int value);
-    partial void OnMaNhomNguoiDungChanged();
-    partial void OnGhiChuChanging(string value);
-    partial void OnGhiChuChanged();
-    #endregion
-		
-		public QL_NguoiDungNhomNguoiDung()
-		{
-			this._QL_NguoiDung = default(EntityRef<QL_NguoiDung>);
-			this._QL_NhomNguoiDung = default(EntityRef<QL_NhomNguoiDung>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDangNhap", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string TenDangNhap
-		{
-			get
-			{
-				return this._TenDangNhap;
-			}
-			set
-			{
-				if ((this._TenDangNhap != value))
-				{
-					if (this._QL_NguoiDung.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTenDangNhapChanging(value);
-					this.SendPropertyChanging();
-					this._TenDangNhap = value;
-					this.SendPropertyChanged("TenDangNhap");
-					this.OnTenDangNhapChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhomNguoiDung", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaNhomNguoiDung
-		{
-			get
-			{
-				return this._MaNhomNguoiDung;
-			}
-			set
-			{
-				if ((this._MaNhomNguoiDung != value))
-				{
-					if (this._QL_NhomNguoiDung.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaNhomNguoiDungChanging(value);
-					this.SendPropertyChanging();
-					this._MaNhomNguoiDung = value;
-					this.SendPropertyChanged("MaNhomNguoiDung");
-					this.OnMaNhomNguoiDungChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(200)")]
-		public string GhiChu
-		{
-			get
-			{
-				return this._GhiChu;
-			}
-			set
-			{
-				if ((this._GhiChu != value))
-				{
-					this.OnGhiChuChanging(value);
-					this.SendPropertyChanging();
-					this._GhiChu = value;
-					this.SendPropertyChanged("GhiChu");
-					this.OnGhiChuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QL_NguoiDung_QL_NguoiDungNhomNguoiDung", Storage="_QL_NguoiDung", ThisKey="TenDangNhap", OtherKey="TenDangNhap", IsForeignKey=true)]
-		public QL_NguoiDung QL_NguoiDung
-		{
-			get
-			{
-				return this._QL_NguoiDung.Entity;
-			}
-			set
-			{
-				QL_NguoiDung previousValue = this._QL_NguoiDung.Entity;
-				if (((previousValue != value) 
-							|| (this._QL_NguoiDung.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._QL_NguoiDung.Entity = null;
-						previousValue.QL_NguoiDungNhomNguoiDungs.Remove(this);
-					}
-					this._QL_NguoiDung.Entity = value;
-					if ((value != null))
-					{
-						value.QL_NguoiDungNhomNguoiDungs.Add(this);
-						this._TenDangNhap = value.TenDangNhap;
-					}
-					else
-					{
-						this._TenDangNhap = default(string);
-					}
-					this.SendPropertyChanged("QL_NguoiDung");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QL_NhomNguoiDung_QL_NguoiDungNhomNguoiDung", Storage="_QL_NhomNguoiDung", ThisKey="MaNhomNguoiDung", OtherKey="MaNhomNguoiDung", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QL_NhomNguoiDung_QL_NguoiDung", Storage="_QL_NhomNguoiDung", ThisKey="MaNhomNguoiDung", OtherKey="MaNhomNguoiDung", IsForeignKey=true)]
 		public QL_NhomNguoiDung QL_NhomNguoiDung
 		{
 			get
@@ -2692,17 +2526,17 @@ namespace BLL_DAL
 					if ((previousValue != null))
 					{
 						this._QL_NhomNguoiDung.Entity = null;
-						previousValue.QL_NguoiDungNhomNguoiDungs.Remove(this);
+						previousValue.QL_NguoiDungs.Remove(this);
 					}
 					this._QL_NhomNguoiDung.Entity = value;
 					if ((value != null))
 					{
-						value.QL_NguoiDungNhomNguoiDungs.Add(this);
+						value.QL_NguoiDungs.Add(this);
 						this._MaNhomNguoiDung = value.MaNhomNguoiDung;
 					}
 					else
 					{
-						this._MaNhomNguoiDung = default(int);
+						this._MaNhomNguoiDung = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("QL_NhomNguoiDung");
 				}
@@ -2744,7 +2578,7 @@ namespace BLL_DAL
 		
 		private EntitySet<QL_PhanQuyen> _QL_PhanQuyens;
 		
-		private EntitySet<QL_NguoiDungNhomNguoiDung> _QL_NguoiDungNhomNguoiDungs;
+		private EntitySet<QL_NguoiDung> _QL_NguoiDungs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2761,7 +2595,7 @@ namespace BLL_DAL
 		public QL_NhomNguoiDung()
 		{
 			this._QL_PhanQuyens = new EntitySet<QL_PhanQuyen>(new Action<QL_PhanQuyen>(this.attach_QL_PhanQuyens), new Action<QL_PhanQuyen>(this.detach_QL_PhanQuyens));
-			this._QL_NguoiDungNhomNguoiDungs = new EntitySet<QL_NguoiDungNhomNguoiDung>(new Action<QL_NguoiDungNhomNguoiDung>(this.attach_QL_NguoiDungNhomNguoiDungs), new Action<QL_NguoiDungNhomNguoiDung>(this.detach_QL_NguoiDungNhomNguoiDungs));
+			this._QL_NguoiDungs = new EntitySet<QL_NguoiDung>(new Action<QL_NguoiDung>(this.attach_QL_NguoiDungs), new Action<QL_NguoiDung>(this.detach_QL_NguoiDungs));
 			OnCreated();
 		}
 		
@@ -2838,16 +2672,16 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QL_NhomNguoiDung_QL_NguoiDungNhomNguoiDung", Storage="_QL_NguoiDungNhomNguoiDungs", ThisKey="MaNhomNguoiDung", OtherKey="MaNhomNguoiDung")]
-		public EntitySet<QL_NguoiDungNhomNguoiDung> QL_NguoiDungNhomNguoiDungs
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QL_NhomNguoiDung_QL_NguoiDung", Storage="_QL_NguoiDungs", ThisKey="MaNhomNguoiDung", OtherKey="MaNhomNguoiDung")]
+		public EntitySet<QL_NguoiDung> QL_NguoiDungs
 		{
 			get
 			{
-				return this._QL_NguoiDungNhomNguoiDungs;
+				return this._QL_NguoiDungs;
 			}
 			set
 			{
-				this._QL_NguoiDungNhomNguoiDungs.Assign(value);
+				this._QL_NguoiDungs.Assign(value);
 			}
 		}
 		
@@ -2883,13 +2717,13 @@ namespace BLL_DAL
 			entity.QL_NhomNguoiDung = null;
 		}
 		
-		private void attach_QL_NguoiDungNhomNguoiDungs(QL_NguoiDungNhomNguoiDung entity)
+		private void attach_QL_NguoiDungs(QL_NguoiDung entity)
 		{
 			this.SendPropertyChanging();
 			entity.QL_NhomNguoiDung = this;
 		}
 		
-		private void detach_QL_NguoiDungNhomNguoiDungs(QL_NguoiDungNhomNguoiDung entity)
+		private void detach_QL_NguoiDungs(QL_NguoiDung entity)
 		{
 			this.SendPropertyChanging();
 			entity.QL_NhomNguoiDung = null;

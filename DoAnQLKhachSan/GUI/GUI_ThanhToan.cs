@@ -19,6 +19,7 @@ namespace GUI
         BLL_DAL_ChiTietDichVu ctdvs = new BLL_DAL_ChiTietDichVu();
         BLL_DAL_Phong phongs = new BLL_DAL_Phong();
         BLL_DAL_HoaDon hoadons = new BLL_DAL_HoaDon();
+        BLL_DAL_NhanVien nvs = new BLL_DAL_NhanVien();
         public int manv;
         public GUI_ThanhToan()
         {
@@ -28,6 +29,8 @@ namespace GUI
         private void GUI_ThanhToan_Load(object sender, EventArgs e)
         {
             loadDGVKH();
+            txtNhanVien.Text = nvs.getTenNV(manv);
+            txtNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void loadDGVKH()
@@ -51,15 +54,19 @@ namespace GUI
             {
                 int id = (int)dgvKH.CurrentRow.Cells["MaKH"].Value;
                 loadDGVDP(id);
-                int tamtinh = 0;
+                int tong = 0;
+                int tienphong = 0;
                 foreach (DataGridViewRow row in dgvDP.Rows)
                 {
                     if (!row.IsNewRow)
                     {
-                        tamtinh += int.Parse(row.Cells["TongTien"].Value.ToString());
+                        tong += int.Parse(row.Cells["TongTien"].Value.ToString());
+                        tienphong += dps.layTienPhong((int)row.Cells["MaDP"].Value);
                     }
                 }
-                txtTongTien.Text = tamtinh.ToString();
+                txtTongTien.Text = tong.ToString();
+                txtTienPhong.Text = tienphong.ToString();
+                txtTienDichVu.Text = (tong - tienphong).ToString();
             }
         }
 

@@ -16,7 +16,6 @@ namespace GUI
     public partial class GUI_ChiTietDatPhong : DevExpress.XtraEditors.XtraForm
     {
         public event EventHandler FormClosedEvent;
-        public event EventHandler ChuyenPhongClosed;
         public Phong p = new Phong();
         BLL_DAL_Phong phongs = new BLL_DAL_Phong();
         BLL_DAL_DichVu dichvus = new BLL_DAL_DichVu();

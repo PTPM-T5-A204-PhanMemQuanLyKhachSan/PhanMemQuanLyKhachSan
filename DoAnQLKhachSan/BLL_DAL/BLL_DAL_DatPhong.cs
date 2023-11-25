@@ -33,6 +33,17 @@ namespace BLL_DAL
             return list;
         }
 
+        public int layTienPhong(int ma)
+        {
+            return (int)(from phong in db.Phongs
+                         join datPhong in db.DatPhongs on phong.MaPhong equals datPhong.MaPhong
+                         where datPhong.MaDP == ma
+                         select new
+                         {
+                             TienPhong = phong.GiaPhong * (((DateTime)datPhong.CheckOut - (DateTime)datPhong.CheckIn).Days + 1)
+                         }.TienPhong).FirstOrDefault();
+        }
+
         public List<Object> layDSInHD(int id)
         {
             var l = from phong in db.Phongs

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL_BAL_QL_NhomNguoiDung.cs" />
     <Compile Include="BLL_DAL_ChiTietDichVu.cs" />
     <Compile Include="BLL_DAL_DatPhong.cs" />
     <Compile Include="BLL_DAL_DichVu.cs" />
@@ -52,7 +53,6 @@
     <Compile Include="BLL_DAL_Phong.cs" />
     <Compile Include="BLL_DAL_QL_NguoiDung.cs" />
     <Compile Include="BLL_DAL_NhanVien.cs" />
-    <Compile Include="BLL_DAL_QL_NguoiDungNhomNguoiDung.cs" />
     <Compile Include="BLL_DAL_QL_PhanQuyen.cs" />
     <Compile Include="CauHinh.cs" />
     <Compile Include="DoanhThu.cs" />

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLKhachSan" Class="QLKhachSanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-AILSKO80;Initial Catalog=QLKhachSan;Integrated Security=True" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLKhachSanConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-GIGABYTE;Initial Catalog=QLKhachSan;Persist Security Info=True;User ID=sa;Encrypt=False" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLKhachSanConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChiTietDichVu" Member="ChiTietDichVus">
     <Type Name="ChiTietDichVu">
       <Column Name="MaDP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -111,17 +111,9 @@
       <Column Name="MatKhau" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="HoatDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="QL_NguoiDung_QL_NguoiDungNhomNguoiDung" Member="QL_NguoiDungNhomNguoiDungs" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="QL_NguoiDungNhomNguoiDung" />
+      <Column Name="MaNhomNguoiDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="NhanVien_QL_NguoiDung" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.QL_NguoiDungNhomNguoiDung" Member="QL_NguoiDungNhomNguoiDungs">
-    <Type Name="QL_NguoiDungNhomNguoiDung">
-      <Column Name="TenDangNhap" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaNhomNguoiDung" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Association Name="QL_NguoiDung_QL_NguoiDungNhomNguoiDung" Member="QL_NguoiDung" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="QL_NguoiDung" IsForeignKey="true" />
-      <Association Name="QL_NhomNguoiDung_QL_NguoiDungNhomNguoiDung" Member="QL_NhomNguoiDung" ThisKey="MaNhomNguoiDung" OtherKey="MaNhomNguoiDung" Type="QL_NhomNguoiDung" IsForeignKey="true" />
+      <Association Name="QL_NhomNguoiDung_QL_NguoiDung" Member="QL_NhomNguoiDung" ThisKey="MaNhomNguoiDung" OtherKey="MaNhomNguoiDung" Type="QL_NhomNguoiDung" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.QL_NhomNguoiDung" Member="QL_NhomNguoiDungs">
@@ -130,7 +122,7 @@
       <Column Name="TenNhom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Association Name="QL_NhomNguoiDung_QL_PhanQuyen" Member="QL_PhanQuyens" ThisKey="MaNhomNguoiDung" OtherKey="MaNhomNguoiDung" Type="QL_PhanQuyen" />
-      <Association Name="QL_NhomNguoiDung_QL_NguoiDungNhomNguoiDung" Member="QL_NguoiDungNhomNguoiDungs" ThisKey="MaNhomNguoiDung" OtherKey="MaNhomNguoiDung" Type="QL_NguoiDungNhomNguoiDung" />
+      <Association Name="QL_NhomNguoiDung_QL_NguoiDung" Member="QL_NguoiDungs" ThisKey="MaNhomNguoiDung" OtherKey="MaNhomNguoiDung" Type="QL_NguoiDung" />
     </Type>
   </Table>
 </Database>

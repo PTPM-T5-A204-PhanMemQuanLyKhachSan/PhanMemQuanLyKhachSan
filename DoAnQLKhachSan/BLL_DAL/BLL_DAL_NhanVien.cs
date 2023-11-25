@@ -23,6 +23,11 @@ namespace BLL_DAL
             return manv;
         }
 
+        public string getTenNV(int ma)
+        {
+            return db.NhanViens.FirstOrDefault(t => t.MaNV == ma).HoTenNV;
+        }
+
         public bool updateNhanVien(NhanVien temp)
         {
             try

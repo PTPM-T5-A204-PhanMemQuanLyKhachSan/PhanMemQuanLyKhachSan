@@ -19,14 +19,11 @@ namespace GUI
     {
         public int manv;
         public string tendn;
-        BLL_DAL_QL_NguoiDungNhomNguoiDung qlndnnds = new BLL_DAL_QL_NguoiDungNhomNguoiDung();
+        BLL_DAL_QL_NguoiDung qlnds = new BLL_DAL_QL_NguoiDung();
         BLL_DAL_QL_PhanQuyen qlpqs = new BLL_DAL_QL_PhanQuyen();
         public GUI_Main()
         {
             InitializeComponent();
-            
-            GUI_QLDatPhong gui = new GUI_QLDatPhong();
-            fluentDesignFormContainer1.Controls.Add(gui);
         }
 
         private void GUI_Main_FormClosed(object sender, FormClosedEventArgs e)
@@ -72,14 +69,11 @@ namespace GUI
 
         private void GUI_Main_Load(object sender, EventArgs e)
         {
-            List<int> nhomND = qlndnnds.GetMaNhomNguoiDung(tendn);
-            foreach (int n in nhomND)
+            int n = qlnds.GetMaNhomNguoiDung(tendn);
+            List<QL_PhanQuyen> dsQuyen = qlpqs.GetMaManHinh(n);
+            foreach (QL_PhanQuyen q in dsQuyen)
             {
-                List<QL_PhanQuyen> dsQuyen = qlpqs.GetMaManHinh(n);
-                foreach (QL_PhanQuyen q in dsQuyen)
-                {
-                    FindMenuPhanQuyen(this.accordionControl1.Elements, q.MaManHinh, (bool)q.CoQuyen);
-                }
+                FindMenuPhanQuyen(this.accordionControl1.Elements, q.MaManHinh, (bool)q.CoQuyen);
             }
         }
 
@@ -129,6 +123,13 @@ namespace GUI
         {
             fluentDesignFormContainer1.Controls.Clear();
             GUI_QLDatPhong gui = new GUI_QLDatPhong();
+            fluentDesignFormContainer1.Controls.Add(gui);
+        }
+
+        private void accordionControlElement2_Click(object sender, EventArgs e)
+        {
+            fluentDesignFormContainer1.Controls.Clear();
+            GUI_QLTaiKhoan gui = new GUI_QLTaiKhoan();
             fluentDesignFormContainer1.Controls.Add(gui);
         }
     }
