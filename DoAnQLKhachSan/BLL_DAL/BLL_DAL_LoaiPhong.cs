@@ -18,5 +18,10 @@ namespace BLL_DAL
         {
             return db.LoaiPhongs.ToList();
         }
+
+        public List<LoaiPhong> LoadLoaiPhongTheoId(int id)
+        {
+            return db.LoaiPhongs.Where(t => t.MaLoai == id).ToList();
+        }
     }
 }

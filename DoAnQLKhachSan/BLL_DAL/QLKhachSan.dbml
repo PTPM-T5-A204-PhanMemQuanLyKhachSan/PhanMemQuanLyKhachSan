@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLKhachSan" Class="QLKhachSanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-GIGABYTE;Initial Catalog=QLKhachSan;Persist Security Info=True;User ID=sa;Encrypt=False" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLKhachSanConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-AILSKO80;Initial Catalog=QLKhachSan;Integrated Security=True" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLKhachSanConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChiTietDichVu" Member="ChiTietDichVus">
     <Type Name="ChiTietDichVu">
       <Column Name="MaDP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -123,6 +123,15 @@
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Association Name="QL_NhomNguoiDung_QL_PhanQuyen" Member="QL_PhanQuyens" ThisKey="MaNhomNguoiDung" OtherKey="MaNhomNguoiDung" Type="QL_PhanQuyen" />
       <Association Name="QL_NhomNguoiDung_QL_NguoiDung" Member="QL_NguoiDungs" ThisKey="MaNhomNguoiDung" OtherKey="MaNhomNguoiDung" Type="QL_NguoiDung" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DuLieuAI" Member="DuLieuAIs">
+    <Type Name="DuLieuAI">
+      <Column Name="PhongCach" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="BanCong" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Tang" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="SPA" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="KetQua" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

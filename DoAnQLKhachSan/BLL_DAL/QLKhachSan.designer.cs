@@ -193,6 +193,14 @@ namespace BLL_DAL
 				return this.GetTable<QL_NhomNguoiDung>();
 			}
 		}
+		
+		public System.Data.Linq.Table<DuLieuAI> DuLieuAIs
+		{
+			get
+			{
+				return this.GetTable<DuLieuAI>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietDichVu")]
@@ -2727,6 +2735,105 @@ namespace BLL_DAL
 		{
 			this.SendPropertyChanging();
 			entity.QL_NhomNguoiDung = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DuLieuAI")]
+	public partial class DuLieuAI
+	{
+		
+		private string _PhongCach;
+		
+		private string _BanCong;
+		
+		private string _Tang;
+		
+		private string _SPA;
+		
+		private string _KetQua;
+		
+		public DuLieuAI()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhongCach", DbType="NVarChar(15)")]
+		public string PhongCach
+		{
+			get
+			{
+				return this._PhongCach;
+			}
+			set
+			{
+				if ((this._PhongCach != value))
+				{
+					this._PhongCach = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BanCong", DbType="NVarChar(5)")]
+		public string BanCong
+		{
+			get
+			{
+				return this._BanCong;
+			}
+			set
+			{
+				if ((this._BanCong != value))
+				{
+					this._BanCong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tang", DbType="NVarChar(15)")]
+		public string Tang
+		{
+			get
+			{
+				return this._Tang;
+			}
+			set
+			{
+				if ((this._Tang != value))
+				{
+					this._Tang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SPA", DbType="NVarChar(5)")]
+		public string SPA
+		{
+			get
+			{
+				return this._SPA;
+			}
+			set
+			{
+				if ((this._SPA != value))
+				{
+					this._SPA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KetQua", DbType="NVarChar(2)")]
+		public string KetQua
+		{
+			get
+			{
+				return this._KetQua;
+			}
+			set
+			{
+				if ((this._KetQua != value))
+				{
+					this._KetQua = value;
+				}
+			}
 		}
 	}
 }

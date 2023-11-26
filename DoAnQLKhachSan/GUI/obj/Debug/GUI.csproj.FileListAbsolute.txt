@@ -220,3 +220,15 @@ C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\obj\Deb
 D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\GUI\obj\Debug\GUI.GUI_ChuyenPhong.resources
 D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\GUI\obj\Debug\GUI.GUI_QLTaiKhoan.resources
 C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\obj\Debug\GUI.GUI_QLTaiKhoan.resources
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\bin\Debug\Accord.dll.config
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\bin\Debug\Accord.dll
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\bin\Debug\Accord.MachineLearning.dll
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\bin\Debug\Accord.Math.Core.dll
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\bin\Debug\Accord.Math.dll
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\bin\Debug\Accord.Statistics.dll
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\bin\Debug\Accord.xml
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\bin\Debug\Accord.MachineLearning.xml
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\bin\Debug\Accord.Math.xml
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\bin\Debug\Accord.Math.Core.xml
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\bin\Debug\Accord.Statistics.xml
+C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\GUI\obj\Debug\GUI.GUI_GoiYDatPhong.resources

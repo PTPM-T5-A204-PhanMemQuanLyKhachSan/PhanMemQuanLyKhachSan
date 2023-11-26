@@ -48,18 +48,30 @@ namespace BLL_DAL
         {
             int count = 0;
 
-            using (SqlConnection connection = new SqlConnection(BLL_DAL.Properties.Settings.Default.QLKhachSanConnectionString))
+            try
             {
-                connection.Open();
-
-                string query = "Select count(dp.MaDP) from DatPhong dp, HoaDon hd where dp.MaHD = hd.MaHD and NgayThanhToan >= @StartDate and NgayThanhToan <= @EndDate";
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlConnection connection = new SqlConnection(BLL_DAL.Properties.Settings.Default.QLKhachSanConnectionString))
                 {
-                    command.Parameters.AddWithValue("@StartDate", bd);
-                    command.Parameters.AddWithValue("@EndDate", kt);
+                    connection.Open();
 
-                    count = (int)command.ExecuteScalar();
+                    string query = "SELECT dbo.SoLuongDatPhong(@StartDate, @EndDate)";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@StartDate", bd);
+                        command.Parameters.AddWithValue("@EndDate", kt);
+
+                        object result = command.ExecuteScalar();
+
+                        if (result != null && result != DBNull.Value)
+                        {
+                            count = Convert.ToInt32(result);
+                        }
+                    }
                 }
+            }
+            catch
+            {
+                return -1;
             }
 
             return count;

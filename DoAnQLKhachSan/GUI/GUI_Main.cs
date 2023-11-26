@@ -21,6 +21,8 @@ namespace GUI
         public string tendn;
         BLL_DAL_QL_NguoiDung qlnds = new BLL_DAL_QL_NguoiDung();
         BLL_DAL_QL_PhanQuyen qlpqs = new BLL_DAL_QL_PhanQuyen();
+        BLL_DAL_DuLieuAI dlAIs = new BLL_DAL_DuLieuAI();
+        CayQuyetDinh cqd = new CayQuyetDinh();
         public GUI_Main()
         {
             InitializeComponent();
@@ -69,6 +71,8 @@ namespace GUI
 
         private void GUI_Main_Load(object sender, EventArgs e)
         {
+            cqd.Hoc(dlAIs.loadDuLieuAI());
+
             int n = qlnds.GetMaNhomNguoiDung(tendn);
             List<QL_PhanQuyen> dsQuyen = qlpqs.GetMaManHinh(n);
             foreach (QL_PhanQuyen q in dsQuyen)
@@ -110,6 +114,7 @@ namespace GUI
         private void accordionControlElement11_Click(object sender, EventArgs e)
         {
             loadQLDatPhong();
+
         }
 
         private void accordionControlElement7_Click(object sender, EventArgs e)
@@ -123,6 +128,7 @@ namespace GUI
         {
             fluentDesignFormContainer1.Controls.Clear();
             GUI_QLDatPhong gui = new GUI_QLDatPhong();
+            gui.cqd = cqd;
             fluentDesignFormContainer1.Controls.Add(gui);
         }
 
