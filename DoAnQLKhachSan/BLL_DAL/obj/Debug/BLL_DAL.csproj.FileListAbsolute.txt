@@ -31,3 +31,15 @@ C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\BLL_DAL\bin
 C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\BLL_DAL\bin\Debug\Accord.Math.Core.xml
 C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\BLL_DAL\bin\Debug\Accord.Statistics.xml
 C:\Users\ASUS\OneDrive\Desktop\DA_LTCSHARP2_05\SOURCE\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.csproj.CopyComplete
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\bin\Debug\Accord.dll.config
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\bin\Debug\Accord.dll
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\bin\Debug\Accord.MachineLearning.dll
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\bin\Debug\Accord.Math.Core.dll
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\bin\Debug\Accord.Math.dll
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\bin\Debug\Accord.Statistics.dll
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\bin\Debug\Accord.xml
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\bin\Debug\Accord.MachineLearning.xml
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\bin\Debug\Accord.Math.xml
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\bin\Debug\Accord.Math.Core.xml
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\bin\Debug\Accord.Statistics.xml
+D:\Backup\LT\PTPMUDTM\GitHub\DoAnQLKhachSan\BLL_DAL\obj\Debug\BLL_DAL.csproj.CopyComplete

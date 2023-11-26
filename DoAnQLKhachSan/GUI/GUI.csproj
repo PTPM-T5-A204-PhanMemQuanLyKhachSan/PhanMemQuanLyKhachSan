@@ -124,12 +124,6 @@
     <Compile Include="GUI_DangNhap.Designer.cs">
       <DependentUpon>GUI_DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI_GoiYDatPhong.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI_GoiYDatPhong.Designer.cs">
-      <DependentUpon>GUI_GoiYDatPhong.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,9 +197,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_DangNhap.resx">
       <DependentUpon>GUI_DangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI_GoiYDatPhong.resx">
-      <DependentUpon>GUI_GoiYDatPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_Main.resx">
       <DependentUpon>GUI_Main.cs</DependentUpon>
@@ -293,6 +284,7 @@
   <ItemGroup>
     <None Include="Resources\Cash-icon.png" />
     <None Include="Resources\coins-icon.png" />
+    <None Include="Resources\door-icon.png" />
     <Content Include="Resources\nv1.jpg" />
     <Content Include="Resources\nv2.png" />
     <Content Include="Resources\nv3.jpg" />

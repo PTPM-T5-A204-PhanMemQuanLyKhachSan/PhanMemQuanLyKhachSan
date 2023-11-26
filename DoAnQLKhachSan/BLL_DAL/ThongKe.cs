@@ -12,7 +12,6 @@ namespace BLL_DAL
 {
     public class ThongKe
     {
-
         public List<DoanhThu> LoadDanhThu(DateTime bd, DateTime kt)
         {
             List<DoanhThu> list = new List<DoanhThu>();
@@ -81,6 +80,5 @@ namespace BLL_DAL
         {
 
         }
-
     }
 }

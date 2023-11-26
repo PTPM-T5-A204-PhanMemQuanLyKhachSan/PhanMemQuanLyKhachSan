@@ -16,7 +16,7 @@ namespace BLL_DAL
     {
         public CayQuyetDinh()
         {
-            
+
         }
 
         Codification codebook;
@@ -44,8 +44,6 @@ namespace BLL_DAL
             };
 
             tree = id3learning.Learn(inputs, outputs);
-
-
         }
 
         public string GoiY(DuLieuAI d)
@@ -55,12 +53,12 @@ namespace BLL_DAL
                 double error = new ZeroOneLoss(outputs).Loss(tree.Decide(inputs));
 
                 int[] query = codebook.Transform(new[,]
-            {
-                { "PhongCach",     d.PhongCach  },
-                { "BanCong",     d.BanCong  },
-                { "Tang",     d.Tang  },
-                { "SPA",     d.SPA  }
-            });
+                {
+                    { "PhongCach",     d.PhongCach  },
+                    { "BanCong",     d.BanCong  },
+                    { "Tang",     d.Tang  },
+                    { "SPA",     d.SPA  }
+                });
 
                 int predicted = tree.Decide(query);
 
@@ -72,7 +70,6 @@ namespace BLL_DAL
             {
                 return "";
             }
-
         }
     }
 }
