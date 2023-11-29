@@ -123,5 +123,20 @@ namespace BLL_DAL
                 return false;
             }
         }
+
+        public bool xoaDatPhong(int madp)
+        {
+            try
+            {
+                DatPhong temp = db.DatPhongs.FirstOrDefault(t => t.MaDP == madp);
+                db.DatPhongs.DeleteOnSubmit(temp);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

@@ -61,6 +61,7 @@
             this.btnDatPhong = new System.Windows.Forms.Button();
             this.btnNhanPhong = new System.Windows.Forms.Button();
             this.btnChuyenP = new System.Windows.Forms.Button();
+            this.btnHuyDat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -387,24 +388,35 @@
             // 
             this.btnChuyenP.Location = new System.Drawing.Point(12, 538);
             this.btnChuyenP.Name = "btnChuyenP";
-            this.btnChuyenP.Size = new System.Drawing.Size(106, 44);
+            this.btnChuyenP.Size = new System.Drawing.Size(118, 44);
             this.btnChuyenP.TabIndex = 4;
             this.btnChuyenP.Text = "Chuyển phòng";
             this.btnChuyenP.UseVisualStyleBackColor = true;
             this.btnChuyenP.Click += new System.EventHandler(this.btnChuyenP_Click);
+            // 
+            // btnHuyDat
+            // 
+            this.btnHuyDat.Location = new System.Drawing.Point(136, 538);
+            this.btnHuyDat.Name = "btnHuyDat";
+            this.btnHuyDat.Size = new System.Drawing.Size(106, 44);
+            this.btnHuyDat.TabIndex = 5;
+            this.btnHuyDat.Text = "Hủy đặt";
+            this.btnHuyDat.UseVisualStyleBackColor = true;
+            this.btnHuyDat.Click += new System.EventHandler(this.btnHuyDat_Click);
             // 
             // GUI_ChiTietDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 594);
+            this.Controls.Add(this.btnHuyDat);
             this.Controls.Add(this.btnChuyenP);
             this.Controls.Add(this.btnNhanPhong);
             this.Controls.Add(this.btnDatPhong);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtTenPhong);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "GUI_ChiTietDatPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChiTietDatPhong";
@@ -458,5 +470,6 @@
         private System.Windows.Forms.ComboBox cbxKH;
         private System.Windows.Forms.Button btnTaoKH;
         private System.Windows.Forms.Button btnChuyenP;
+        private System.Windows.Forms.Button btnHuyDat;
     }
 }

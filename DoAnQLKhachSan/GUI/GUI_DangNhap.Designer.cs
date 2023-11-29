@@ -120,9 +120,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(238, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 24);
+            this.label1.Size = new System.Drawing.Size(239, 24);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Khách sạn Vương Giả";
+            this.label1.Text = "Khách sạn Robins Villa";
             // 
             // label2
             // 

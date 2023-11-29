@@ -285,6 +285,7 @@
     <None Include="Resources\Cash-icon.png" />
     <None Include="Resources\coins-icon.png" />
     <None Include="Resources\door-icon.png" />
+    <None Include="Resources\backgroud.jpg" />
     <Content Include="Resources\nv1.jpg" />
     <Content Include="Resources\nv2.png" />
     <Content Include="Resources\nv3.jpg" />

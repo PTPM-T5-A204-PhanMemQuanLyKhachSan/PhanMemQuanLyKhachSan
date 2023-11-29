@@ -68,7 +68,7 @@
             // 
             this.btnChuyenPhong.Location = new System.Drawing.Point(18, 129);
             this.btnChuyenPhong.Name = "btnChuyenPhong";
-            this.btnChuyenPhong.Size = new System.Drawing.Size(106, 44);
+            this.btnChuyenPhong.Size = new System.Drawing.Size(118, 44);
             this.btnChuyenPhong.TabIndex = 4;
             this.btnChuyenPhong.Text = "Chuyển phòng";
             this.btnChuyenPhong.UseVisualStyleBackColor = true;

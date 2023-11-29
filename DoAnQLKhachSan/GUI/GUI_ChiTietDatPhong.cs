@@ -42,7 +42,7 @@ namespace GUI
             cbxKH.DisplayMember = "HoTenKH";
             cbxKH.ValueMember = "MaKH";
             cbxKH.SelectedIndex = -1;
-            
+
 
             if (p.TrangThai == "Trống")
             {
@@ -57,6 +57,7 @@ namespace GUI
                     dp = datphongs.layDPTheoTrangThai("Rỗng");
                 }
                 btnChuyenP.Visible = false;
+                btnHuyDat.Visible = false;
             }
             else
             {
@@ -87,10 +88,12 @@ namespace GUI
                 loadDGVDichVu();
 
                 btnChuyenP.Visible = true;
+                btnHuyDat.Visible = false;
             }
 
             if (p.TrangThai == "Đã đặt")
             {
+                btnHuyDat.Visible = true;
                 btnDatPhong.Text = "Lưu";
                 cbxKH.Enabled = false;
                 btnTaoKH.Enabled = false;
@@ -154,7 +157,7 @@ namespace GUI
             }
             else
             {
-                if(txtHoTenKH.Text==string.Empty || txtCCCD.Text==string.Empty || txtPhone.Text==string.Empty || txtDiaChi.Text == string.Empty)
+                if (txtHoTenKH.Text == string.Empty || txtCCCD.Text == string.Empty || txtPhone.Text == string.Empty || txtDiaChi.Text == string.Empty)
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo");
                     return false;
@@ -315,11 +318,20 @@ namespace GUI
             frm.dp = dp;
             frm.FormClosedEvent += Frm_FormClosedEvent;
             frm.ShowDialog();
-            
+
         }
 
         private void Frm_FormClosedEvent(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void btnHuyDat_Click(object sender, EventArgs e)
+        {
+            ctdvs.xoaAllCTDV(dp.MaDP);
+            datphongs.xoaDatPhong(dp.MaDP);
+            p.TrangThai = "Trống";
+            phongs.suaPhong(p);
             this.Close();
         }
     }

@@ -20,7 +20,8 @@ namespace GUI
         BLL_DAL_Phong phongs = new BLL_DAL_Phong();
         BLL_DAL_ChiTietDichVu ctdvs = new BLL_DAL_ChiTietDichVu();
         GUI_Main objMain = (GUI_Main)Application.OpenForms["GUI_Main"];
-        
+        bool isThoat = false;
+
         public GUI_ChuyenPhong()
         {
             InitializeComponent();
@@ -28,14 +29,15 @@ namespace GUI
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            isThoat = true;
             this.Close();
         }
 
         private void btnChuyenPhong_Click(object sender, EventArgs e)
         {
-            if(cboPhong.SelectedValue == null)
+            if (cboPhong.SelectedValue == null)
             {
-                MessageBox.Show("Vui lòng chọn phòng muốn chuyển đến!", "Thông báo",  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng chọn phòng muốn chuyển đến!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -47,11 +49,8 @@ namespace GUI
             phongchuyenden.TrangThai = dp.Phong.TrangThai;
             phongs.suaPhong(phongchuyenden);
 
-
             int soNgay = (dp.CheckOut.Value - dp.CheckIn.Value).Days + 1;
-            int TongTien = (int)dp.TongTien - (soNgay*(int)phonghientai.GiaPhong);
-
-
+            int TongTien = (int)dp.TongTien - (soNgay * (int)phonghientai.GiaPhong);
 
             dp = dps.layDPTheoKey((int)dp.MaDP);
             dp.MaPhong = phongchuyenden.MaPhong;
@@ -77,7 +76,10 @@ namespace GUI
 
         private void GUI_ChuyenPhong_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FormClosedEvent?.Invoke(this, EventArgs.Empty);
+            if (!isThoat)
+            {
+                FormClosedEvent?.Invoke(this, EventArgs.Empty);
+            }
         }
     }
 }
