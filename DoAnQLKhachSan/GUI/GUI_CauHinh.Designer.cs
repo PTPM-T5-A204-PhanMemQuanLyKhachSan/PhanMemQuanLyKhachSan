@@ -161,7 +161,7 @@
             this.MaximizeBox = false;
             this.Name = "GUI_CauHinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Hotel";
+            this.Text = "GUI_CauHinh";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GUI_CauHinh_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
